@@ -42,10 +42,13 @@ You'll need standard build tools and a cross-compilation toolchain.
     ```
 *   **Add the toolchain to your PATH:**
     ```bash
-    echo 'export PATH=~/path/to/osxcross/target/bin:$PATH' >> ~/.bashrc
+    # Add osxcross tools to PATH (adjust path as needed)
+    export OSXCROSS_ROOT=$(pwd)
+    echo "export PATH=\$HOME/osxcross/target/bin:\$PATH" >> ~/.bashrc
     source ~/.bashrc
+    # Verify the toolchain is available
+    which x86_64-apple-darwin17-clang
     ```
-    *(Replace `~/path/to/osxcross/` with the actual path to the `osxcross` directory)*
 
 #### ✅ Task 2: Download and Extract Valgrind Source
 
@@ -65,23 +68,27 @@ This is the most critical step, where you tell Valgrind's build system to use yo
 
 *   **Run the configure script with cross-compilation and static flags:**
     ```bash
-    # Set the host and target for cross-compilation
-    # The target `x86_64-apple-darwin` should match what osxcross provides.
-    # We add LDFLAGS for a static build.
+    # Set the host and target for cross-compilation to match macOS 10.13 (Darwin 17)
+    # We add LDFLAGS for a static build and keep PGO flags for optimization.
     CFLAGS="-O3 -flto=full -fprofile-generate" CXXFLAGS="-O3 -flto=full -fprofile-generate" \
-    ./configure --host=x86_64-apple-darwin21 --target=x86_64-apple-darwin21 \
-                CC=x86_64-apple-darwin21-clang \
-                CXX=x86_64-apple-darwin21-clang++ \
+    ./configure --host=x86_64-apple-darwin17 --target=x86_64-apple-darwin17 \
+                CC=x86_64-apple-darwin17-clang \
+                CXX=x86_64-apple-darwin17-clang++ \
                 LDFLAGS="-static -static-libgcc -flto=full" \
-                --enable-only64bit
+                --enable-only64bit \
+                --prefix=/usr/local 2>&1 | tee configure.log
     ```
-    ***Note on the `--host` and `--target` flags:*** The number after `darwin` might need to be adjusted based on the SDK version you are using. `darwin21` corresponds roughly to macOS 12. You can check the exact target triplet provided by your `osxcross` installation by running `x86_64-apple-darwin21-clang -v`.
+    ***Note on the `--host` and `--target` flags:*** We're using `darwin17` which corresponds to macOS 10.13. You can verify the exact target triplet provided by your `osxcross` installation by running `x86_64-apple-darwin17-clang -v`. The configure output is logged to `configure.log` for debugging.
 
 #### ✅ Task 4: Compile Valgrind
 
 *   **Build Valgrind:**
     ```bash
-    make
+    # Build with verbose output and log everything for debugging
+    make -j$(nproc) V=1 2>&1 | tee make.log
+    # If build fails, check the logs:
+    # tail -100 make.log
+    # grep -i error make.log
     ```
 
 #### ✅ Task 5: Verify the Build
@@ -94,12 +101,33 @@ After the compilation is complete, you should have Valgrind binaries in the sour
     ```
     The output should indicate that it's a `Mach-O 64-bit executable x86_64`.
 
-*   **Check for dynamic dependencies (optional):**
+*   **Check for dynamic dependencies:**
     ```bash
     # Use the otool from your cross-compiler
-    x86_64-apple-darwin21-otool -L ./coregrind/valgrind
+    x86_64-apple-darwin17-otool -L ./coregrind/valgrind
     ```
-    This should show that the executable is statically linked and does not have a long list of dynamic library dependencies.
+    This should show minimal dynamic library dependencies if static linking worked.
+
+*   **Additional verification steps:**
+    ```bash
+    # Check binary architecture and format
+    x86_64-apple-darwin17-objdump -f ./coregrind/valgrind
+    
+    # Verify all built tools
+    find . -name "vg*" -type f -executable | head -10
+    
+    # Check file sizes (static binaries are typically larger)
+    ls -lh ./coregrind/valgrind
+    ls -lh ./*/*.so 2>/dev/null || echo "No .so files found (good for static build)"
+    ```
+
+*   **Debug logs location:**
+    ```bash
+    # Important logs for debugging:
+    echo "Configure log: $(pwd)/configure.log"
+    echo "Make log: $(pwd)/make.log"
+    echo "Save these logs if you encounter issues"
+    ```
 
 #### ✅ Task 6: Prepare the Portable Package
 
