@@ -1,0 +1,27 @@
+priv/libvex_amd64_darwin_a-main_util.o: priv/main_util.c \
+  ../VEX/pub/libvex_basictypes.h ../VEX/pub/libvex.h \
+  ../VEX/pub/libvex_ir.h priv/main_globals.h priv/main_util.h \
+  ../VEX/pub/libvex_inner.h ../config.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/stdarg.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/stdarg.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_header_macro.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___gnuc_va_list.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_list.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_arg.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___va_copy.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_copy.h
+../VEX/pub/libvex_basictypes.h:
+../VEX/pub/libvex.h:
+../VEX/pub/libvex_ir.h:
+priv/main_globals.h:
+priv/main_util.h:
+../VEX/pub/libvex_inner.h:
+../config.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/stdarg.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/stdarg.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_header_macro.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___gnuc_va_list.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_list.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_arg.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___va_copy.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_copy.h:

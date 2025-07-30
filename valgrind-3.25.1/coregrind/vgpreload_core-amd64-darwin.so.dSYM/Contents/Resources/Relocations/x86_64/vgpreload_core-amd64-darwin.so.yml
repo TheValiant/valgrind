@@ -1,0 +1,12 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     vgpreload_core-amd64-darwin.so
+relocations:
+  - { offset: 0x27, size: 0x8, addend: 0x0, symName: _vg_cleanup_env, symObjAddr: 0x0, symBinAddr: 0xC20, symSize: 0x1A0 }
+  - { offset: 0x58, size: 0x8, addend: 0x0, symName: ___crashreporter_info__, symObjAddr: 0x270, symBinAddr: 0x1040, symSize: 0x0 }
+  - { offset: 0x66, size: 0x8, addend: 0x0, symName: __vgr00000ZU_libSystemZdZaZddylib_arc4random, symObjAddr: 0x1A0, symBinAddr: 0xDC0, symSize: 0x50 }
+  - { offset: 0x92, size: 0x8, addend: 0x0, symName: __vgr00000ZU_libSystemZdZaZddylib_arc4random.rnd, symObjAddr: 0x278, symBinAddr: 0x1048, symSize: 0x0 }
+  - { offset: 0x11E, size: 0x8, addend: 0x0, symName: _vg_cleanup_env, symObjAddr: 0x0, symBinAddr: 0xC20, symSize: 0x1A0 }
+  - { offset: 0x20B, size: 0x8, addend: 0x0, symName: __vgr00000ZU_libSystemZdZaZddylib_arc4random_stir, symObjAddr: 0x1F0, symBinAddr: 0xE10, symSize: 0x10 }
+  - { offset: 0x227, size: 0x8, addend: 0x0, symName: __vgr00000ZU_libSystemZdZaZddylib_arc4random_addrandom, symObjAddr: 0x200, symBinAddr: 0xE20, symSize: 0x6 }
+...

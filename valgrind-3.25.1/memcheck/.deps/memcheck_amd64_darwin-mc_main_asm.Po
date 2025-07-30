@@ -1,0 +1,35 @@
+memcheck_amd64_darwin-mc_main_asm.o: mc_main_asm.c \
+  ../include/pub_tool_basics.h ../VEX/pub/libvex_basictypes.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/stdarg.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/stdarg.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_header_macro.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___gnuc_va_list.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_list.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_arg.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___va_copy.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_copy.h \
+  ../include/pub_tool_poolalloc.h ../include/pub_tool_hashtable.h \
+  ../include/pub_tool_tooliface.h ../include/pub_tool_errormgr.h \
+  ../include/pub_tool_execontext.h ../include/pub_tool_debuginfo.h \
+  ../include/pub_tool_xarray.h ../VEX/pub/libvex.h \
+  ../VEX/pub/libvex_ir.h mc_include.h
+../include/pub_tool_basics.h:
+../VEX/pub/libvex_basictypes.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/stdarg.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/stdarg.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_header_macro.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___gnuc_va_list.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_list.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_arg.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___va_copy.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_copy.h:
+../include/pub_tool_poolalloc.h:
+../include/pub_tool_hashtable.h:
+../include/pub_tool_tooliface.h:
+../include/pub_tool_errormgr.h:
+../include/pub_tool_execontext.h:
+../include/pub_tool_debuginfo.h:
+../include/pub_tool_xarray.h:
+../VEX/pub/libvex.h:
+../VEX/pub/libvex_ir.h:
+mc_include.h:

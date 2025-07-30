@@ -1,0 +1,173 @@
+vgpreload_core_amd64_darwin_so-vg_preloaded.o: vg_preloaded.c \
+  pub_core_basics.h ../include/pub_tool_basics.h \
+  ../VEX/pub/libvex_basictypes.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/stdarg.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/stdarg.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_header_macro.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___gnuc_va_list.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_list.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_arg.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___va_copy.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_copy.h \
+  pub_core_clreq.h ../include/pub_tool_clreq.h ../include/valgrind.h \
+  pub_core_debuginfo.h ../include/pub_tool_debuginfo.h \
+  ../include/pub_tool_xarray.h pub_core_redir.h \
+  ../include/pub_tool_redir.h ../config.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/string.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/_types.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/cdefs.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_symbol_aliasing.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_posix_availability.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/machine/_types.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/i386/_types.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_pthread/_pthread_types.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/Availability.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/AvailabilityInternal.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_size_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_null.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_rsize_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/machine/types.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/i386/types.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_int8_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_int16_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_int32_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_int64_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_u_int8_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_u_int16_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_u_int32_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_u_int64_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_intptr_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_uintptr_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_errno_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_ssize_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/strings.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/secure/_strings.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/secure/_common.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/secure/_string.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/crt_externs.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/fcntl.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/fcntl.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_mode_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_off_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_pid_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_o_sync.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_o_dsync.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_seek_set.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_s_ifmt.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_timespec.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_filesec_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/unistd.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/unistd.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_posix_vdisable.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/_types/_uint64_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/_types/_uint32_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_uid_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_gid_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_useconds_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/select.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/appleapiopts.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_def.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_timeval.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_time_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_suseconds_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_sigset_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_setsize.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_set.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_clr.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_isset.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_zero.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_copy.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_select.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_dev_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_uuid_t.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/gethostuuid.h
+pub_core_basics.h:
+../include/pub_tool_basics.h:
+../VEX/pub/libvex_basictypes.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/stdarg.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/stdarg.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_header_macro.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___gnuc_va_list.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_list.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_arg.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___va_copy.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_copy.h:
+pub_core_clreq.h:
+../include/pub_tool_clreq.h:
+../include/valgrind.h:
+pub_core_debuginfo.h:
+../include/pub_tool_debuginfo.h:
+../include/pub_tool_xarray.h:
+pub_core_redir.h:
+../include/pub_tool_redir.h:
+../config.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/string.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/_types.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/cdefs.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_symbol_aliasing.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_posix_availability.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/machine/_types.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/i386/_types.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_pthread/_pthread_types.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/Availability.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/AvailabilityInternal.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_size_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_null.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_rsize_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/machine/types.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/i386/types.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_int8_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_int16_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_int32_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_int64_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_u_int8_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_u_int16_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_u_int32_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_u_int64_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_intptr_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_uintptr_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_errno_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_ssize_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/strings.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/secure/_strings.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/secure/_common.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/secure/_string.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/crt_externs.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/fcntl.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/fcntl.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_mode_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_off_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_pid_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_o_sync.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_o_dsync.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_seek_set.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_s_ifmt.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_timespec.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_filesec_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/unistd.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/unistd.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_posix_vdisable.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/_types/_uint64_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/_types/_uint32_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_uid_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_gid_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_useconds_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/select.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/appleapiopts.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_def.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_timeval.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_time_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_suseconds_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_sigset_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_setsize.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_set.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_clr.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_isset.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_zero.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_fd_copy.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_select.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_dev_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/_types/_uuid_t.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/gethostuuid.h:

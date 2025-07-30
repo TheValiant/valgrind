@@ -1,0 +1,2 @@
+m_sigframe/libcoregrind_amd64_darwin_a-sigframe-arm64-freebsd.o: \
+  m_sigframe/sigframe-arm64-freebsd.c

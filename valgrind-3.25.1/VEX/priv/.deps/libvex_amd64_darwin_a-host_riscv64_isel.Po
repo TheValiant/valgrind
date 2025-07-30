@@ -1,0 +1,14 @@
+priv/libvex_amd64_darwin_a-host_riscv64_isel.o: priv/host_riscv64_isel.c \
+  priv/host_riscv64_defs.h ../VEX/pub/libvex.h \
+  ../VEX/pub/libvex_basictypes.h ../VEX/pub/libvex_ir.h \
+  priv/host_generic_regs.h priv/main_util.h ../VEX/pub/libvex_inner.h \
+  ../config.h priv/main_globals.h
+priv/host_riscv64_defs.h:
+../VEX/pub/libvex.h:
+../VEX/pub/libvex_basictypes.h:
+../VEX/pub/libvex_ir.h:
+priv/host_generic_regs.h:
+priv/main_util.h:
+../VEX/pub/libvex_inner.h:
+../config.h:
+priv/main_globals.h:

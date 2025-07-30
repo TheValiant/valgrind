@@ -1,0 +1,58 @@
+libnolto_coregrind_amd64_darwin_a-m_stacks.o: m_stacks.c \
+  pub_core_basics.h ../include/pub_tool_basics.h \
+  ../VEX/pub/libvex_basictypes.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/stdarg.h \
+  /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/stdarg.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_header_macro.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___gnuc_va_list.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_list.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_arg.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___va_copy.h \
+  /usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_copy.h \
+  pub_core_debuglog.h pub_core_libcassert.h \
+  ../include/pub_tool_libcassert.h pub_core_libcprint.h \
+  ../include/pub_tool_libcprint.h pub_core_mallocfree.h \
+  ../include/pub_tool_mallocfree.h pub_core_aspacemgr.h \
+  ../include/pub_tool_aspacemgr.h pub_core_options.h \
+  ../include/pub_tool_options.h ../include/pub_tool_libcbase.h \
+  ../VEX/pub/libvex.h ../VEX/pub/libvex_ir.h pub_core_xarray.h \
+  ../include/pub_tool_xarray.h pub_core_stacks.h pub_core_tooliface.h \
+  ../include/pub_tool_tooliface.h ../include/pub_tool_errormgr.h \
+  ../include/pub_tool_execontext.h ../include/pub_tool_debuginfo.h \
+  pub_core_inner.h ../VEX/pub/libvex_inner.h ../config.h
+pub_core_basics.h:
+../include/pub_tool_basics.h:
+../VEX/pub/libvex_basictypes.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/stdarg.h:
+/home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/stdarg.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_header_macro.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___gnuc_va_list.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_list.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_arg.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg___va_copy.h:
+/usr/lib/llvm-20/bin/../lib/clang/20/include/__stdarg_va_copy.h:
+pub_core_debuglog.h:
+pub_core_libcassert.h:
+../include/pub_tool_libcassert.h:
+pub_core_libcprint.h:
+../include/pub_tool_libcprint.h:
+pub_core_mallocfree.h:
+../include/pub_tool_mallocfree.h:
+pub_core_aspacemgr.h:
+../include/pub_tool_aspacemgr.h:
+pub_core_options.h:
+../include/pub_tool_options.h:
+../include/pub_tool_libcbase.h:
+../VEX/pub/libvex.h:
+../VEX/pub/libvex_ir.h:
+pub_core_xarray.h:
+../include/pub_tool_xarray.h:
+pub_core_stacks.h:
+pub_core_tooliface.h:
+../include/pub_tool_tooliface.h:
+../include/pub_tool_errormgr.h:
+../include/pub_tool_execontext.h:
+../include/pub_tool_debuginfo.h:
+pub_core_inner.h:
+../VEX/pub/libvex_inner.h:
+../config.h:

@@ -1,0 +1,2 @@
+m_syswrap/libcoregrind_amd64_darwin_a-syswrap-riscv64-linux.o: \
+  m_syswrap/syswrap-riscv64-linux.c

@@ -1,0 +1,14 @@
+priv/libvex_amd64_darwin_a-s390_disasm.o: priv/s390_disasm.c \
+  ../VEX/pub/libvex_basictypes.h priv/main_util.h \
+  ../VEX/pub/libvex_inner.h ../config.h priv/main_globals.h \
+  ../VEX/pub/libvex.h ../VEX/pub/libvex_ir.h priv/s390_defs.h \
+  priv/s390_disasm.h
+../VEX/pub/libvex_basictypes.h:
+priv/main_util.h:
+../VEX/pub/libvex_inner.h:
+../config.h:
+priv/main_globals.h:
+../VEX/pub/libvex.h:
+../VEX/pub/libvex_ir.h:
+priv/s390_defs.h:
+priv/s390_disasm.h:

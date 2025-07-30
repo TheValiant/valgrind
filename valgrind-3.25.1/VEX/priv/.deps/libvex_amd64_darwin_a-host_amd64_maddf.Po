@@ -1,0 +1,4 @@
+priv/libvex_amd64_darwin_a-host_amd64_maddf.o: priv/host_amd64_maddf.c \
+  ../VEX/pub/libvex_basictypes.h priv/host_amd64_maddf.h
+../VEX/pub/libvex_basictypes.h:
+priv/host_amd64_maddf.h:

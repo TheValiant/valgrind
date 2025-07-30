@@ -1,0 +1,5 @@
+echo "# This is a generated file, composed of the following suppression rules:" > default.supp
+./auxprogs/make_or_upd_vgversion_h .
+echo "# " ./xfree-3.supp ./xfree-4.supp ./darwin10-drd.supp ./darwin17.supp  >> default.supp
+cat xfree-3.supp xfree-4.supp darwin10-drd.supp darwin17.supp >> default.supp
+/home/sha1024/Desktop/Cursor-1.1.3-x86_64.AppImage  all-recursive

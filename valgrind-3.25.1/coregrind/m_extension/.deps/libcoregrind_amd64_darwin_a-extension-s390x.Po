@@ -1,0 +1,2 @@
+m_extension/libcoregrind_amd64_darwin_a-extension-s390x.o: \
+  m_extension/extension-s390x.c

@@ -70,7 +70,7 @@ This is the most critical step, where you tell Valgrind's build system to use yo
     ```bash
     # Set the host and target for cross-compilation to match macOS 10.13 (Darwin 17)
     # We add LDFLAGS for a static build and keep PGO flags for optimization.
-    CFLAGS="-O3 -flto=full -fprofile-generate" CXXFLAGS="-O3 -flto=full -fprofile-generate" \
+    CFLAGS="-O3 -flto=full -fprofile-generate -fwhole-program-vtables" CXXFLAGS="-O3 -flto=full -fprofile-generate -fwhole-program-vtables" \
     ./configure --host=x86_64-apple-darwin17 --target=x86_64-apple-darwin17 \
                 CC=x86_64-apple-darwin17-clang \
                 CXX=x86_64-apple-darwin17-clang++ \
