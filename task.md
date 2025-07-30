@@ -5,7 +5,7 @@ Here is a to-do list to guide you through the process of cross-compiling a stati
 Before you begin, you need a copy of the macOS SDK. The SDK contains the headers and libraries necessary for building macOS applications. The easiest way to obtain this is from a machine with Xcode installed.
 
 *   **On a macOS machine:** Locate the SDK directory. It's typically found at `/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/`. You will want the `MacOSX.sdk` directory (or a versioned equivalent).
-*   **Transfer the SDK:** Copy the entire `MacOSX.sdk` directory to your Linux machine. For this guide, we'll assume you place it in `~/macOS-SDKs/`.
+*   **Transfer the SDK:** Copy the entire `MacOSX.sdk` directory to your Linux machine. For this guide, we have `MacOSX10.13.sdk.tar.xz` in the current directory.
 
 ---
 
@@ -26,13 +26,16 @@ You'll need standard build tools and a cross-compilation toolchain.
     ```bash
     git clone https://github.com/tpoechtrager/osxcross.git
     cd osxcross
-    ```*   **Package the SDK for `osxcross`:**
+    ```
+*   **Extract and package the SDK for `osxcross`:**
     ```bash
-    # This assumes your SDK is in ~/macOS-SDKs/MacOSX.sdk
-    # The tarball name is important for osxcross to find it.
-    tar -czf xcode-sdk.tar.gz -C ~/macOS-SDKs/MacOSX.sdk .
+    # Extract the existing SDK archive from the original working directory
+    tar -xf ../MacOSX10.13.sdk.tar.xz
+    # Package it for osxcross (the tarball name is important for osxcross to find it)
+    tar -czf xcode-sdk.tar.gz -C MacOSX10.13.sdk .
     mv xcode-sdk.tar.gz ./tarballs/
-    ```*   **Build `osxcross`:**
+    ```
+*   **Build `osxcross`:**
     ```bash
     # This will build the toolchain for x86_64
     UNATTENDED=1 ./build.sh
@@ -65,7 +68,7 @@ This is the most critical step, where you tell Valgrind's build system to use yo
     # Set the host and target for cross-compilation
     # The target `x86_64-apple-darwin` should match what osxcross provides.
     # We add LDFLAGS for a static build.
-    CFLAGS="-O3 -flto=full" CXXFLAGS="-O3 -flto=full -fwhole-program-vtables" \
+    CFLAGS="-O3 -flto=full -fprofile-generate" CXXFLAGS="-O3 -flto=full -fprofile-generate" \
     ./configure --host=x86_64-apple-darwin21 --target=x86_64-apple-darwin21 \
                 CC=x86_64-apple-darwin21-clang \
                 CXX=x86_64-apple-darwin21-clang++ \
