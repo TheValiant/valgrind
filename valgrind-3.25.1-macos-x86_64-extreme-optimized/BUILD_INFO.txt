@@ -1,0 +1,28 @@
+Valgrind 3.25.1 Cross-Compiled for macOS x86_64
+================================================
+
+Build Date: Fri Aug  1 03:35:54 AM +04 2025
+Optimization Level: extreme
+Target Platform: macOS x86_64 (darwin17)
+Host Platform: Linux sha1024-ThinkPad-X1-Extreme-2nd 6.14.0-27-generic #27-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 22 17:01:58 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+Optimization Flags Used:
+CFLAGS: -O3 -flto=full -march=skylake -mtune=skylake              -mavx2 -mfma -mbmi -mbmi2              -funroll-loops -finline-functions                  -mlzcnt -madx -mfsgsbase -mrdrnd -mrdseed -mf16c                  -finline-limit=1500                  -ffunction-sections -fdata-sections                 -fvisibility=hidden -fomit-frame-pointer                 -finline-limit=2000 -ffast-math                 -fno-rtti -fno-exceptions                 -fwhole-program-vtables                 -fvirtual-function-elimination
+LDFLAGS: -flto=full
+
+Binary Information:
+valgrind-3.25.1-macos-x86_64-extreme-optimized/valgrind: Mach-O 64-bit x86_64 executable, flags:<NOUNDEFS|DYLDLINK|TWOLEVEL|PIE>
+
+Dependencies:
+valgrind-3.25.1-macos-x86_64-extreme-optimized/valgrind:
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.0.0)
+
+Symbol Count: 48
+
+Usage on macOS:
+1. Extract this package
+2. Run: ./valgrind --version
+3. Use normally: ./valgrind your_program
+
+Note: Built with maximum static linking for macOS compatibility.
+Cross-compilation: ✅ SUCCESS

@@ -179,7 +179,7 @@ SAFE_CFLAGS="-O3 -flto=full -march=skylake -mtune=skylake \
 # Level 2: Advanced Aggressive  
 ADVANCED_CFLAGS="$SAFE_CFLAGS \
                  -mlzcnt -madx -mfsgsbase -mrdrnd -mrdseed -mf16c \
-                 -fvect-cost-model=cheap -finline-limit=1500 \
+                 -finline-limit=1500 \
                  -ffunction-sections -fdata-sections"
 
 # Level 3: Extreme Aggressive
@@ -215,20 +215,27 @@ CXXFLAGS="$CFLAGS"
 
 # Maximal static linking flags based on optimization level
 # NOTE: macOS can't be fully static (always needs libSystem.B.dylib), but these flags maximize static linking
+# Configure-time LDFLAGS (minimal, to pass configure tests)
+CONFIGURE_LDFLAGS="-flto=full"
+
+# Build-time LDFLAGS (full static linking)
 case $OPTIMIZATION_LEVEL in
     "safe")
         # Basic static linking: link standard libs statically + LTO + dead code elimination
-        LDFLAGS="-static -static-libgcc -static-libstdc++ -flto=full -Wl,-dead_strip"
+        BUILD_LDFLAGS="-static -static-libgcc -static-libstdc++ -flto=full -Wl,-dead_strip"
         ;;
     "advanced") 
         # + Symbol stripping for smaller binary
-        LDFLAGS="-static -static-libgcc -static-libstdc++ -flto=full -Wl,-dead_strip -Wl,-x"
+        BUILD_LDFLAGS="-static -static-libgcc -static-libstdc++ -flto=full -Wl,-dead_strip -Wl,-x"
         ;;
     "extreme")
-        # + Aggressive symbol/debug stripping + dylib cleanup + unwind table removal
-        LDFLAGS="-static -static-libgcc -static-libstdc++ -flto=full -Wl,-dead_strip -Wl,-x -s -Wl,-dead_strip_dylibs -Wl,-no_compact_unwind"
+        # + Aggressive symbol/debug stripping + dylib cleanup + unwind table removal  
+        BUILD_LDFLAGS="-static -static-libgcc -static-libstdc++ -flto=full -Wl,-dead_strip -Wl,-x -Wl,-dead_strip_dylibs -Wl,-no_compact_unwind"
         ;;
 esac
+
+# Use minimal flags for configure
+LDFLAGS="$CONFIGURE_LDFLAGS"
 
 echo "CFLAGS: $CFLAGS"
 echo "LDFLAGS: $LDFLAGS"
@@ -260,7 +267,8 @@ fi
 echo "   🔧 Ensuring MIG interface files are generated..."
 
 # Check if bootstrap_cmds (cross-platform MIG) exists
-if [ ! -d "../bootstrap_cmds" ]; then
+BOOTSTRAP_DIR="$(dirname $(pwd))/bootstrap_cmds"
+if [ ! -d "$BOOTSTRAP_DIR" ]; then
     echo "   📥 Installing cross-platform MIG tool..."
     cd .. || exit 1
     if [ ! -d "bootstrap_cmds" ]; then
@@ -277,18 +285,21 @@ if [ ! -d "../bootstrap_cmds" ]; then
     cd ../valgrind-3.25.1 || exit 1
     echo "      ✅ MIG tool built successfully"
 else
-    echo "   ✅ MIG tool already available"
+    echo "   ✅ MIG tool already available at: $BOOTSTRAP_DIR"
 fi
 
 # Generate MIG files (always regenerate for consistency)
 echo "   🔄 Generating MIG interface files..."
 cd coregrind/m_mach || exit 1
 
-MIG_TOOL="$(pwd)/../../bootstrap_cmds/migcom.tproj/mig.sh"
+MIG_TOOL="$BOOTSTRAP_DIR/migcom.tproj/mig.sh"
 SDK_PATH="$OSXCROSS_ROOT/MacOSX10.13.sdk"
 
 if [ ! -f "$MIG_TOOL" ]; then
     echo "      ❌ MIG tool not found at: $MIG_TOOL"
+    echo "      📋 Bootstrap directory: $BOOTSTRAP_DIR"
+    echo "      📋 Contents of bootstrap directory:"
+    ls -la "$BOOTSTRAP_DIR" 2>/dev/null || echo "      Directory does not exist"
     exit 1
 fi
 
@@ -297,18 +308,23 @@ if [ ! -d "$SDK_PATH" ]; then
     exit 1
 fi
 
+# Set up environment for cross-compilation MIG
+export MIGCC="x86_64-apple-darwin17-clang"
+export CC="x86_64-apple-darwin17-clang"
+export CPP="x86_64-apple-darwin17-clang -E"
+
 # Generate all required MIG files
 echo "      📝 Generating mach_vm interface..."
-"$MIG_TOOL" -arch x86_64 -isysroot "$SDK_PATH" "$SDK_PATH/usr/include/mach/mach_vm.defs" || exit 1
+"$MIG_TOOL" -isysroot "$SDK_PATH" "$SDK_PATH/usr/include/mach/mach_vm.defs" || exit 1
 
 echo "      📝 Generating task interface..."
-"$MIG_TOOL" -arch x86_64 -isysroot "$SDK_PATH" "$SDK_PATH/usr/include/mach/task.defs" || exit 1
+"$MIG_TOOL" -isysroot "$SDK_PATH" "$SDK_PATH/usr/include/mach/task.defs" || exit 1
 
 echo "      📝 Generating thread_act interface..."
-"$MIG_TOOL" -arch x86_64 -isysroot "$SDK_PATH" "$SDK_PATH/usr/include/mach/thread_act.defs" || exit 1
+"$MIG_TOOL" -isysroot "$SDK_PATH" "$SDK_PATH/usr/include/mach/thread_act.defs" || exit 1
 
 echo "      📝 Generating vm_map interface..."
-"$MIG_TOOL" -arch x86_64 -isysroot "$SDK_PATH" "$SDK_PATH/usr/include/mach/vm_map.defs" || exit 1
+"$MIG_TOOL" -isysroot "$SDK_PATH" "$SDK_PATH/usr/include/mach/vm_map.defs" || exit 1
 
 # Verify all 12 files were generated (4 .defs files × 3 outputs each)
 EXPECTED_FILES="mach_vmUser.c mach_vmServer.c mach_vm.h taskUser.c taskServer.c task.h thread_actUser.c thread_actServer.c thread_act.h vm_mapUser.c vm_mapServer.c vm_map.h"
@@ -327,6 +343,9 @@ else
     echo "      ✅ All 12 MIG files generated successfully"
     ls -la *{User,Server}.{c,h} *.h | wc -l | xargs echo "      📋 Generated files count:"
 fi
+
+# Reset environment variables for configure step
+unset MIGCC CC CPP
 
 cd ../.. || exit 1
 
@@ -444,11 +463,13 @@ esac
 echo "📋 Current binary: 36KB with 55 symbols"
 echo ""
 
-# Build with selected optimization
+# Build with selected optimization using full static linking flags
 echo "🔥 Building with $OPTIMIZATION_LEVEL optimization..."
+echo "🔗 Using build-time LDFLAGS: $BUILD_LDFLAGS"
 env -i \
     PATH="/tmp/fake_uname:$OSXCROSS_ROOT/target/bin:/usr/bin:/bin" \
     HOME="$HOME" SHELL=/bin/bash OSXCROSS_ROOT="$OSXCROSS_ROOT" \
+    LDFLAGS="$BUILD_LDFLAGS" \
     make -j"$(nproc)" 2>&1 | tee "make-$OPTIMIZATION_LEVEL.log"
 
 # Analyze results
