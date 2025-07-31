@@ -1541,9 +1541,9 @@ BOOST_LIBS =
 CC = x86_64-apple-darwin17-clang
 CCAS = x86_64-apple-darwin17-clang
 CCASDEPMODE = depmode=gcc3
-CCASFLAGS = -O3
+CCASFLAGS = -O3 -march=skylake -mtune=skylake
 CCDEPMODE = depmode=gcc3
-CFLAGS = -O3
+CFLAGS = -O3 -march=skylake -mtune=skylake
 CFLAGS_MPI = -g -O -fno-omit-frame-pointer -Wall -dynamic
 CPP = x86_64-apple-darwin17-clang -E
 CPPFLAGS = 
@@ -1551,7 +1551,7 @@ CSCOPE = cscope
 CTAGS = ctags
 CXX = x86_64-apple-darwin17-clang++
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -O3
+CXXFLAGS = -O3 -march=skylake -mtune=skylake
 CYGPATH_W = echo
 DEFAULT_SUPP = ./xfree-3.supp ./xfree-4.supp ./darwin10-drd.supp ./darwin17.supp 
 DEFS = -DHAVE_CONFIG_H

@@ -29,32 +29,8 @@ uname -v = #27-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 22 17:01:58 UTC 2025
 
 PATH: /tmp/fake_uname/
 PATH: /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/
-PATH: /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/
-PATH: /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/
-PATH: /home/sha1024/.local/bin/
-PATH: /tmp/.mount_CursorgKJPBU/usr/bin/
-PATH: /tmp/.mount_CursorgKJPBU/usr/sbin/
-PATH: /tmp/.mount_CursorgKJPBU/usr/games/
-PATH: /tmp/.mount_CursorgKJPBU/bin/
-PATH: /tmp/.mount_CursorgKJPBU/sbin/
-PATH: /home/sha1024/.cargo/bin/
-PATH: /home/sha1024/.local/bin/
-PATH: /usr/local/sbin/
-PATH: /usr/local/bin/
-PATH: /usr/sbin/
 PATH: /usr/bin/
-PATH: /sbin/
 PATH: /bin/
-PATH: /usr/games/
-PATH: /usr/local/games/
-PATH: /snap/bin/
-PATH: /snap/bin/
-PATH: /home/sha1024/.dotnet/tools/
-PATH: /home/sha1024/.local/share/JetBrains/Toolbox/scripts/
-PATH: /home/sha1024/.local/bin/
-PATH: /home/sha1024/.local/bin/
-PATH: /home/sha1024/.local/share/JetBrains/Toolbox/scripts/
-PATH: /home/sha1024/.local/bin/
 
 
 ## ----------- ##
@@ -131,28 +107,28 @@ clang: error: unknown argument '-version'; did you mean '--version'?
 clang: error: no input files
 configure:4819: $? = 1
 configure:4839: checking whether the C compiler works
-configure:4861: x86_64-apple-darwin17-clang -O3   conftest.c  >&5
+configure:4861: x86_64-apple-darwin17-clang -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 configure:4865: $? = 0
 configure:4916: result: yes
 configure:4920: checking for C compiler default output file name
 configure:4922: result: a.out
 configure:4928: checking for suffix of executables
-configure:4935: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:4935: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 configure:4939: $? = 0
 configure:4963: result: 
 configure:4987: checking whether we are cross compiling
-configure:4995: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:4995: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 configure:4999: $? = 0
 configure:5006: ./conftest
 ./configure: line 5008: ./conftest: cannot execute binary file: Exec format error
 configure:5010: $? = 126
 configure:5025: result: yes
 configure:5031: checking for suffix of object files
-configure:5054: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:5054: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:5058: $? = 0
 configure:5082: result: o
 configure:5086: checking whether the compiler supports GNU C
-configure:5106: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:5106: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:5106: $? = 0
 configure:5118: result: yes
 configure:5129: checking whether x86_64-apple-darwin17-clang accepts -g
@@ -160,7 +136,7 @@ configure:5150: x86_64-apple-darwin17-clang -c -g  conftest.c >&5
 configure:5150: $? = 0
 configure:5197: result: yes
 configure:5217: checking for x86_64-apple-darwin17-clang option to enable C11 features
-configure:5232: x86_64-apple-darwin17-clang  -c -O3  conftest.c >&5
+configure:5232: x86_64-apple-darwin17-clang  -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:5232: $? = 0
 configure:5251: result: none needed
 configure:5375: checking whether x86_64-apple-darwin17-clang understands -c and -o together
@@ -247,7 +223,7 @@ clang++: error: unknown argument '-qversion'; did you mean '--version'?
 clang++: error: no input files
 configure:5918: $? = 1
 configure:5922: checking whether the compiler supports GNU C++
-configure:5942: x86_64-apple-darwin17-clang++ -c -O3  conftest.cpp >&5
+configure:5942: x86_64-apple-darwin17-clang++ -c -O3 -march=skylake -mtune=skylake  conftest.cpp >&5
 configure:5942: $? = 0
 configure:5954: result: yes
 configure:5965: checking whether x86_64-apple-darwin17-clang++ accepts -g
@@ -255,7 +231,7 @@ configure:5986: x86_64-apple-darwin17-clang++ -c -g  conftest.cpp >&5
 configure:5986: $? = 0
 configure:6033: result: yes
 configure:6053: checking for x86_64-apple-darwin17-clang++ option to enable C++11 features
-configure:6068: x86_64-apple-darwin17-clang++  -c -O3  conftest.cpp >&5
+configure:6068: x86_64-apple-darwin17-clang++  -c -O3 -march=skylake -mtune=skylake  conftest.cpp >&5
 conftest.cpp:177:25: warning: empty parentheses interpreted as a function declaration [-Wvexing-parse]
   177 |   cxx11test::delegate d2();
       |                         ^~
@@ -326,51 +302,51 @@ configure:8538: result: /usr/include
 configure:8550: checking where gdb scripts are installed
 configure:8562: result: ${exec_prefix}/libexec/valgrind
 configure:8597: checking for stdio.h
-configure:8597: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8597: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:8597: $? = 0
 configure:8597: result: yes
 configure:8597: checking for stdlib.h
-configure:8597: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8597: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:8597: $? = 0
 configure:8597: result: yes
 configure:8597: checking for string.h
-configure:8597: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8597: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:8597: $? = 0
 configure:8597: result: yes
 configure:8597: checking for inttypes.h
-configure:8597: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8597: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:8597: $? = 0
 configure:8597: result: yes
 configure:8597: checking for stdint.h
-configure:8597: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8597: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:8597: $? = 0
 configure:8597: result: yes
 configure:8597: checking for strings.h
-configure:8597: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8597: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:8597: $? = 0
 configure:8597: result: yes
 configure:8597: checking for sys/stat.h
-configure:8597: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8597: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:8597: $? = 0
 configure:8597: result: yes
 configure:8597: checking for sys/types.h
-configure:8597: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8597: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:8597: $? = 0
 configure:8597: result: yes
 configure:8597: checking for unistd.h
-configure:8597: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8597: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:8597: $? = 0
 configure:8597: result: yes
 configure:8597: checking for sys/time.h
-configure:8597: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8597: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:8597: $? = 0
 configure:8597: result: yes
 configure:8597: checking for sys/param.h
-configure:8597: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8597: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:8597: $? = 0
 configure:8597: result: yes
 configure:8622: checking for features.h
-configure:8622: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:8622: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:64:10: fatal error: 'features.h' file not found
    64 | #include <features.h>
       |          ^~~~~~~~~~~~
@@ -449,15 +425,15 @@ configure:8897: result: darwin
 configure:8902: checking the glibc version
 configure:8951: result: Darwin
 configure:9084: checking for AT_FDCWD
-configure:9103: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9103: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:9103: $? = 0
 configure:9107: result: yes
 configure:9134: checking for stpncpy
-configure:9155: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:9155: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 configure:9155: $? = 0
 configure:9159: result: yes
 configure:9184: checking for PTRACE_GETREGS
-configure:9205: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9205: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 In file included from conftest.c:40:
 /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/ptrace.h:99:38: error: unknown type name 'caddr_t'
    99 | int     ptrace(int _request, pid_t _pid, caddr_t _addr, int _data);
@@ -522,11 +498,11 @@ configure: failed program was:
 | }
 configure:9216: result: no
 configure:9226: checking for CLOCK_MONOTONIC
-configure:9246: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9246: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:9246: $? = 0
 configure:9249: result: yes
 configure:9267: checking for Elf32_Chdr
-configure:9267: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9267: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:38:10: fatal error: 'elf.h' file not found
    38 | #include <elf.h>
       |          ^~~~~~~
@@ -582,7 +558,7 @@ configure: failed program was:
 | }
 configure:9267: result: no
 configure:9276: checking for Elf64_Chdr
-configure:9276: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9276: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:38:10: fatal error: 'elf.h' file not found
    38 | #include <elf.h>
       |          ^~~~~~~
@@ -638,15 +614,15 @@ configure: failed program was:
 | }
 configure:9276: result: no
 configure:9290: checking for pthread_rwlock_t
-configure:9309: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9309: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:9309: $? = 0
 configure:9312: result: yes
 configure:9329: checking for clockid_t
-configure:9347: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9347: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:9347: $? = 0
 configure:9350: result: yes
 configure:9367: checking for PTHREAD_MUTEX_ADAPTIVE_NP
-configure:9386: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9386: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:48:11: error: use of undeclared identifier 'PTHREAD_MUTEX_ADAPTIVE_NP'
    48 |   return (PTHREAD_MUTEX_ADAPTIVE_NP);
       |           ^
@@ -707,7 +683,7 @@ configure: failed program was:
 | }
 configure:9397: result: no
 configure:9407: checking for PTHREAD_MUTEX_ERRORCHECK_NP
-configure:9426: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9426: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:48:11: error: use of undeclared identifier 'PTHREAD_MUTEX_ERRORCHECK_NP'
    48 |   return (PTHREAD_MUTEX_ERRORCHECK_NP);
       |           ^
@@ -768,7 +744,7 @@ configure: failed program was:
 | }
 configure:9437: result: no
 configure:9447: checking for PTHREAD_MUTEX_RECURSIVE_NP
-configure:9466: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9466: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:48:11: error: use of undeclared identifier 'PTHREAD_MUTEX_RECURSIVE_NP'
    48 |   return (PTHREAD_MUTEX_RECURSIVE_NP);
       |           ^
@@ -829,7 +805,7 @@ configure: failed program was:
 | }
 configure:9477: result: no
 configure:9487: checking for PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP
-configure:9507: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9507: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:48:23: error: use of undeclared identifier 'PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP'
    48 |   pthread_mutex_t m = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
       |                       ^
@@ -891,7 +867,7 @@ configure: failed program was:
 | }
 configure:9518: result: no
 configure:9528: checking for pthread_mutex_t.__m_kind
-configure:9528: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9528: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:46:13: error: no member named '__m_kind' in 'struct _opaque_pthread_mutex_t'
    46 | if (ac_aggr.__m_kind)
       |     ~~~~~~~ ^
@@ -948,7 +924,7 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:9528: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9528: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:46:20: error: no member named '__m_kind' in 'struct _opaque_pthread_mutex_t'
    46 | if (sizeof ac_aggr.__m_kind)
       |            ~~~~~~~ ^
@@ -1007,7 +983,7 @@ configure: failed program was:
 | }
 configure:9528: result: no
 configure:9542: checking for pthread_mutex_t.__data.__kind
-configure:9542: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9542: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:46:13: error: no member named '__data' in 'struct _opaque_pthread_mutex_t'
    46 | if (ac_aggr.__data.__kind)
       |     ~~~~~~~ ^
@@ -1064,7 +1040,7 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:9542: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9542: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:46:20: error: no member named '__data' in 'struct _opaque_pthread_mutex_t'
    46 | if (sizeof ac_aggr.__data.__kind)
       |            ~~~~~~~ ^
@@ -1143,7 +1119,7 @@ configure:9702: result: no
 configure:9709: checking if AT_HWCAP contains the mma indicator
 configure:9718: result: no
 configure:9742: checking that assembler knows ISA 2.07 instructions 
-configure:9758: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9758: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:46:24: error: invalid instruction mnemonic 'mtvsrd'
    46 |   __asm__ __volatile__("mtvsrd 1,2 ");
       |                        ^
@@ -1375,7 +1351,7 @@ configure: failed program was:
 | }
 configure:9901: result: no
 configure:9922: checking that assembler knows DFP
-configure:9944: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:9944: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:49:22: error: unknown directive
    49 | __asm__ __volatile__(".machine power7;\n"   "dadd 1, 2, 3;\n"   "dcffix 1, 2");
       |                      ^
@@ -1513,7 +1489,7 @@ configure: failed program was:
 | }
 configure:9996: result: no
 configure:10014: checking that compiler knows DFP datatypes
-configure:10030: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:10030: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:46:3: error: GNU decimal type extension not supported
    46 |   _Decimal64 x = 0.0DD;
       |   ^
@@ -1688,7 +1664,7 @@ configure: failed program was:
 | }
 configure:10122: result: no
 configure:10143: checking that assembler knows ISA 3.00 
-configure:10161: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:10161: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:46:23: error: unknown directive
    46 | __asm__ __volatile__ (".machine power9;\n"      "cnttzw   1,3; \n" );
       |                       ^
@@ -1756,7 +1732,7 @@ configure: failed program was:
 | }
 configure:10175: result: no
 configure:10184: checking that assembler knows xscvhpdp 
-configure:10202: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:10202: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:46:23: error: unknown directive
    46 | __asm__ __volatile__ (".machine power9;\n"      "xscvhpdp 1,2;\n" );
       |                       ^
@@ -1824,7 +1800,7 @@ configure: failed program was:
 | }
 configure:10212: result: no
 configure:10220: checking that assembler knows darn instruction 
-configure:10237: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:10237: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:46:24: error: unknown directive
    46 |   __asm__ __volatile__(".machine power9; darn 1,0 ");
       |                        ^
@@ -1892,7 +1868,7 @@ configure: failed program was:
 | }
 configure:10247: result: no
 configure:10255: checking that assembler knows ISA 3.1 
-configure:10272: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:10272: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:46:23: error: unknown directive
    46 | __asm__ __volatile__ (".machine power10;\n"     "brh 1,2;\n ");
       |                       ^
@@ -2031,7 +2007,7 @@ configure: failed program was:
 | }
 configure:10372: result: no
 configure:10392: checking for dlinfo RTLD_DI_TLS_MODID
-configure:10419: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -ldl >&5
+configure:10419: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -ldl >&5
 conftest.c:44:10: fatal error: 'link.h' file not found
    44 | #include <link.h>
       |          ^~~~~~~~
@@ -2098,7 +2074,7 @@ configure: failed program was:
 | }
 configure:10432: result: no
 configure:10452: checking for eventfd()
-configure:10475: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:10475: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 conftest.c:41:10: fatal error: 'sys/eventfd.h' file not found
    41 | #include <sys/eventfd.h>
       |          ^~~~~~~~~~~~~~~
@@ -2373,7 +2349,7 @@ configure: failed program was:
 | 
 configure:10737: result: no
 configure:10764: checking for struct user_regs_struct
-configure:10764: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:10764: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 In file included from conftest.c:40:
 /home/sha1024/Desktop/mac-valgrind/osxcross/target/bin/../SDK/MacOSX10.13.sdk/usr/include/sys/ptrace.h:99:26: error: unknown type name 'pid_t'
    99 | int     ptrace(int _request, pid_t _pid, caddr_t _addr, int _data);
@@ -2443,7 +2419,7 @@ configure: failed program was:
 | }
 configure:10764: result: no
 configure:10782: checking for __NR_membarrier
-configure:10799: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:10799: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:41:10: fatal error: 'linux/unistd.h' file not found
    41 | #include <linux/unistd.h>
       |          ^~~~~~~~~~~~~~~~
@@ -2503,7 +2479,7 @@ configure: failed program was:
 | }
 configure:10809: result: no
 configure:10825: checking for __NR_io_pgetevents
-configure:10842: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:10842: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:41:10: fatal error: 'linux/unistd.h' file not found
    41 | #include <linux/unistd.h>
       |          ^~~~~~~~~~~~~~~~
@@ -2563,7 +2539,7 @@ configure: failed program was:
 | }
 configure:10852: result: no
 configure:10870: checking for libaio
-configure:10888: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:10888: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:41:10: fatal error: 'libaio.h' file not found
    41 | #include <libaio.h>
       |          ^~~~~~~~~~
@@ -2631,120 +2607,8 @@ configure:11050: checking if gcc accepts -m64
 configure:11069: x86_64-apple-darwin17-clang -c -m64 -Werror  conftest.c >&5
 configure:11069: $? = 0
 configure:11073: result: yes
-configure:11095: checking if gcc accepts -march=octeon
-configure:11114: x86_64-apple-darwin17-clang -c -O3 -m64 -march=octeon -Werror  conftest.c >&5
-error: unknown target CPU 'octeon'
-note: valid target CPU values are: nocona, core2, penryn, bonnell, atom, silvermont, slm, goldmont, goldmont-plus, tremont, nehalem, corei7, westmere, sandybridge, corei7-avx, ivybridge, core-avx-i, haswell, core-avx2, broadwell, skylake, skylake-avx512, skx, cascadelake, cooperlake, cannonlake, icelake-client, rocketlake, icelake-server, tigerlake, sapphirerapids, alderlake, raptorlake, meteorlake, arrowlake, arrowlake-s, lunarlake, gracemont, pantherlake, sierraforest, grandridge, graniterapids, graniterapids-d, emeraldrapids, clearwaterforest, diamondrapids, knl, knm, k8, athlon64, athlon-fx, opteron, k8-sse3, athlon64-sse3, opteron-sse3, amdfam10, barcelona, btver1, btver2, bdver1, bdver2, bdver3, bdver4, znver1, znver2, znver3, znver4, znver5, x86-64, x86-64-v2, x86-64-v3, x86-64-v4
-configure:11114: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "Valgrind"
-| #define PACKAGE_TARNAME "valgrind"
-| #define PACKAGE_VERSION "3.25.1"
-| #define PACKAGE_STRING "Valgrind 3.25.1"
-| #define PACKAGE_BUGREPORT "valgrind-users@lists.sourceforge.net"
-| #define PACKAGE_URL ""
-| #define PACKAGE "valgrind"
-| #define VERSION "3.25.1"
-| #define GDB_PATH "/usr/bin/gdb"
-| #define DARWIN_10_5 100500
-| #define DARWIN_10_6 100600
-| #define DARWIN_10_7 100700
-| #define DARWIN_10_8 100800
-| #define DARWIN_10_9 100900
-| #define DARWIN_10_10 101000
-| #define DARWIN_10_11 101100
-| #define DARWIN_10_12 101200
-| #define DARWIN_10_13 101300
-| #define DARWIN_VERS DARWIN_10_13
-| #define VG_TMPDIR "/tmp"
-| #define XCODE_DIR "/usr/include"
-| #define HAVE_STDIO_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_SYS_TIME_H 1
-| #define HAVE_SYS_PARAM_H 1
-| #define STDC_HEADERS 1
-| #define DARWIN_LIBC 1
-| #define HAVE_CLOCK_MONOTONIC 1
-| #define HAVE_PTHREAD_RWLOCK_T 1
-| #define HAVE_CLOCKID_T 1
-| /* end confdefs.h.  */
-| 
-| int
-| main (void)
-| {
-| 
-|     return 0;
-| 
-|   ;
-|   return 0;
-| }
-configure:11124: result: no
-configure:11136: checking if gcc accepts -march=octeon2
-configure:11155: x86_64-apple-darwin17-clang -c -O3 -m64 -march=octeon2 -Werror  conftest.c >&5
-error: unknown target CPU 'octeon2'
-note: valid target CPU values are: nocona, core2, penryn, bonnell, atom, silvermont, slm, goldmont, goldmont-plus, tremont, nehalem, corei7, westmere, sandybridge, corei7-avx, ivybridge, core-avx-i, haswell, core-avx2, broadwell, skylake, skylake-avx512, skx, cascadelake, cooperlake, cannonlake, icelake-client, rocketlake, icelake-server, tigerlake, sapphirerapids, alderlake, raptorlake, meteorlake, arrowlake, arrowlake-s, lunarlake, gracemont, pantherlake, sierraforest, grandridge, graniterapids, graniterapids-d, emeraldrapids, clearwaterforest, diamondrapids, knl, knm, k8, athlon64, athlon-fx, opteron, k8-sse3, athlon64-sse3, opteron-sse3, amdfam10, barcelona, btver1, btver2, bdver1, bdver2, bdver3, bdver4, znver1, znver2, znver3, znver4, znver5, x86-64, x86-64-v2, x86-64-v3, x86-64-v4
-configure:11155: $? = 1
-configure: failed program was:
-| /* confdefs.h */
-| #define PACKAGE_NAME "Valgrind"
-| #define PACKAGE_TARNAME "valgrind"
-| #define PACKAGE_VERSION "3.25.1"
-| #define PACKAGE_STRING "Valgrind 3.25.1"
-| #define PACKAGE_BUGREPORT "valgrind-users@lists.sourceforge.net"
-| #define PACKAGE_URL ""
-| #define PACKAGE "valgrind"
-| #define VERSION "3.25.1"
-| #define GDB_PATH "/usr/bin/gdb"
-| #define DARWIN_10_5 100500
-| #define DARWIN_10_6 100600
-| #define DARWIN_10_7 100700
-| #define DARWIN_10_8 100800
-| #define DARWIN_10_9 100900
-| #define DARWIN_10_10 101000
-| #define DARWIN_10_11 101100
-| #define DARWIN_10_12 101200
-| #define DARWIN_10_13 101300
-| #define DARWIN_VERS DARWIN_10_13
-| #define VG_TMPDIR "/tmp"
-| #define XCODE_DIR "/usr/include"
-| #define HAVE_STDIO_H 1
-| #define HAVE_STDLIB_H 1
-| #define HAVE_STRING_H 1
-| #define HAVE_INTTYPES_H 1
-| #define HAVE_STDINT_H 1
-| #define HAVE_STRINGS_H 1
-| #define HAVE_SYS_STAT_H 1
-| #define HAVE_SYS_TYPES_H 1
-| #define HAVE_UNISTD_H 1
-| #define HAVE_SYS_TIME_H 1
-| #define HAVE_SYS_PARAM_H 1
-| #define STDC_HEADERS 1
-| #define DARWIN_LIBC 1
-| #define HAVE_CLOCK_MONOTONIC 1
-| #define HAVE_PTHREAD_RWLOCK_T 1
-| #define HAVE_CLOCKID_T 1
-| /* end confdefs.h.  */
-| 
-| int
-| main (void)
-| {
-| 
-|     return 0;
-| 
-|   ;
-|   return 0;
-| }
-configure:11165: result: no
 configure:11178: checking if gcc accepts -mmsa
-configure:11197: x86_64-apple-darwin17-clang -c -O3 -mmsa -Werror  conftest.c >&5
+configure:11197: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake -mmsa -Werror  conftest.c >&5
 clang: error: unsupported option '-mmsa' for target 'x86_64-apple-darwin17'
 configure:11197: $? = 1
 configure: failed program was:
@@ -2799,7 +2663,7 @@ configure: failed program was:
 | }
 configure:11207: result: no
 configure:11218: checking if gcc is producing mips n32 binaries
-configure:11228: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:11228: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:42:2: error: NO
    42 | #error NO
       |  ^
@@ -2852,7 +2716,7 @@ configure: failed program was:
 | 
 configure:11238: result: no
 configure:11246: checking if gcc is producing mips n64 binaries
-configure:11256: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:11256: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:42:2: error: NO
    42 | #error NO
       |  ^
@@ -3941,7 +3805,7 @@ configure:13708: x86_64-apple-darwin17-clang -o conftest -g -gz=zstd   conftest.
 configure:13708: $? = 0
 configure:13712: result: yes
 configure:13738: checking if gcc accepts nested functions
-configure:13755: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:13755: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:45:13: error: function definition is not allowed here
    45 |   int foo() { return 1; }
       |             ^
@@ -4003,7 +3867,7 @@ configure: failed program was:
 | }
 configure:13765: result: no
 configure:13783: checking if gcc accepts the 'p' constraint in asm statements
-configure:13800: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:13800: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:46:51: error: invalid output constraint '=p' in asm
    46 |    __asm__ __volatile__ ("movdqa (%0),%%xmm6\n" : "=p" (p));
       |                                                   ^
@@ -4329,7 +4193,7 @@ configure: failed program was:
 | }
 configure:14172: result: no
 configure:14182: checking if ppc32/64 as supports mtocrf/mfocrf
-configure:14199: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14199: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:45:22: error: invalid instruction mnemonic 'mtocrf'
    45 | __asm__ __volatile__("mtocrf 4,0");
       |                      ^
@@ -4397,7 +4261,7 @@ configure: failed program was:
 | }
 configure:14209: result: no
 configure:14223: checking if ppc32/64 asm supports phased out floating point instructions
-configure:14245: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14245: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:50:24: error: invalid instruction mnemonic 'lfdp'
    50 |      __asm__ volatile ("lfdp 10, %0"::"m" (dbl_pair[0]));
       |                        ^
@@ -4464,35 +4328,35 @@ configure: failed program was:
 | }
 configure:14255: result: no
 configure:14269: checking if amd64 assembler supports fxsave64/fxrstor64
-configure:14287: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14287: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14287: $? = 0
 configure:14291: result: yes
 configure:14312: checking if x86/amd64 assembler speaks SSE3
-configure:14330: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14330: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14330: $? = 0
 configure:14334: result: yes
 configure:14360: checking if x86/amd64 assembler speaks SSSE3
-configure:14381: x86_64-apple-darwin17-clang -c -O3 -msse -Werror  conftest.c >&5
+configure:14381: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake -msse -Werror  conftest.c >&5
 configure:14381: $? = 0
 configure:14385: result: yes
 configure:14412: checking if x86/amd64 assembler supports 'pclmulqdq'
-configure:14430: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14430: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14430: $? = 0
 configure:14434: result: yes
 configure:14460: checking if x86/amd64 assembler supports 'vpclmulqdq'
-configure:14483: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14483: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14483: $? = 0
 configure:14487: result: yes
 configure:14513: checking if x86/amd64 assembler supports FMA4 'vfmaddpd'
-configure:14531: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14531: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14531: $? = 0
 configure:14535: result: yes
 configure:14561: checking if x86/amd64 assembler supports 'lzcnt'
-configure:14579: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14579: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14579: $? = 0
 configure:14583: result: yes
 configure:14609: checking if x86/amd64 assembler supports 'loopnel'
-configure:14627: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14627: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:47:28: error: invalid instruction mnemonic 'loopnel'
    47 |       __asm__ __volatile__("1:  loopnel 1b\n");
       |                            ^
@@ -4556,35 +4420,35 @@ configure: failed program was:
 | }
 configure:14637: result: no
 configure:14657: checking if x86/amd64 assembler supports 'addr32'
-configure:14675: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14675: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14675: $? = 0
 configure:14679: result: yes
 configure:14705: checking if x86/amd64 assembler speaks SSE4.2
-configure:14728: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14728: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14728: $? = 0
 configure:14732: result: yes
 configure:14758: checking if x86/amd64 assembler speaks AVX
-configure:14779: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14779: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14779: $? = 0
 configure:14783: result: yes
 configure:14809: checking if x86/amd64 assembler speaks AVX2
-configure:14830: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14830: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14830: $? = 0
 configure:14834: result: yes
 configure:14861: checking if x86/amd64 assembler speaks TSX
-configure:14884: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14884: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14884: $? = 0
 configure:14888: result: yes
 configure:14914: checking if x86/amd64 assembler speaks BMI1 and BMI2
-configure:14936: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14936: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14936: $? = 0
 configure:14940: result: yes
 configure:14966: checking if x86/amd64 assembler speaks FMA
-configure:14989: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:14989: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:14989: $? = 0
 configure:14993: result: yes
 configure:15019: checking if amd64 assembler knows the MPX instructions
-configure:15042: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:15042: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:47:10: error: invalid register name
    47 |     asm ("bndmov %bnd0,(%rsp)");
       |          ^
@@ -4677,31 +4541,31 @@ configure: failed program was:
 | }
 configure:15052: result: no
 configure:15072: checking if amd64 assembler knows the ADX instructions
-configure:15090: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:15090: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:15090: $? = 0
 configure:15094: result: yes
 configure:15120: checking if amd64 assembler knows the RDRAND instruction
-configure:15140: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:15140: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:15140: $? = 0
 configure:15144: result: yes
 configure:15169: checking if amd64 assembler knows the RDSEED instruction
-configure:15189: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:15189: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:15189: $? = 0
 configure:15193: result: yes
 configure:15219: checking if amd64 assembler knows the F16C instructions
-configure:15240: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:15240: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:15240: $? = 0
 configure:15244: result: yes
 configure:15270: checking if x86/amd64 assembler knows the MOVBE insn
-configure:15289: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:15289: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:15289: $? = 0
 configure:15293: result: yes
 configure:15319: checking if gcc supports the ifunc attribute
-configure:15341: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:15341: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 configure:15341: $? = 0
 configure:15345: result: yes
 configure:15371: checking if gcc supports the armv8 crc feature flag
-configure:15385: x86_64-apple-darwin17-clang -c -O3 -march=armv8-a+crc -Werror  conftest.c >&5
+configure:15385: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake -march=armv8-a+crc -Werror  conftest.c >&5
 error: unknown target CPU 'armv8-a+crc'
 note: valid target CPU values are: nocona, core2, penryn, bonnell, atom, silvermont, slm, goldmont, goldmont-plus, tremont, nehalem, corei7, westmere, sandybridge, corei7-avx, ivybridge, core-avx-i, haswell, core-avx2, broadwell, skylake, skylake-avx512, skx, cascadelake, cooperlake, cannonlake, icelake-client, rocketlake, icelake-server, tigerlake, sapphirerapids, alderlake, raptorlake, meteorlake, arrowlake, arrowlake-s, lunarlake, gracemont, pantherlake, sierraforest, grandridge, graniterapids, graniterapids-d, emeraldrapids, clearwaterforest, diamondrapids, knl, knm, k8, athlon64, athlon-fx, opteron, k8-sse3, athlon64-sse3, opteron-sse3, amdfam10, barcelona, btver1, btver2, bdver1, bdver2, bdver3, bdver4, znver1, znver2, znver3, znver4, znver5, x86-64, x86-64-v2, x86-64-v3, x86-64-v4
 configure:15385: $? = 1
@@ -4754,7 +4618,7 @@ configure: failed program was:
 | 
 configure:15395: result: no
 configure:15416: checking if gcc supports the armv81 feature flag and assembler supports v8.1 instructions
-configure:15431: x86_64-apple-darwin17-clang -c -O3 -march=armv8.1-a -Werror  conftest.c >&5
+configure:15431: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake -march=armv8.1-a -Werror  conftest.c >&5
 error: unknown target CPU 'armv8.1-a'
 note: valid target CPU values are: nocona, core2, penryn, bonnell, atom, silvermont, slm, goldmont, goldmont-plus, tremont, nehalem, corei7, westmere, sandybridge, corei7-avx, ivybridge, core-avx-i, haswell, core-avx2, broadwell, skylake, skylake-avx512, skx, cascadelake, cooperlake, cannonlake, icelake-client, rocketlake, icelake-server, tigerlake, sapphirerapids, alderlake, raptorlake, meteorlake, arrowlake, arrowlake-s, lunarlake, gracemont, pantherlake, sierraforest, grandridge, graniterapids, graniterapids-d, emeraldrapids, clearwaterforest, diamondrapids, knl, knm, k8, athlon64, athlon-fx, opteron, k8-sse3, athlon64-sse3, opteron-sse3, amdfam10, barcelona, btver1, btver2, bdver1, bdver2, bdver3, bdver4, znver1, znver2, znver3, znver4, znver5, x86-64, x86-64-v2, x86-64-v3, x86-64-v4
 configure:15431: $? = 1
@@ -4808,7 +4672,7 @@ configure: failed program was:
 | 
 configure:15441: result: no
 configure:15462: checking if gcc supports the armv82 feature flag and assembler supports v8.2 instructions
-configure:15477: x86_64-apple-darwin17-clang -c -O3 -march=armv8.2-a+fp16 -Werror  conftest.c >&5
+configure:15477: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake -march=armv8.2-a+fp16 -Werror  conftest.c >&5
 error: unknown target CPU 'armv8.2-a+fp16'
 note: valid target CPU values are: nocona, core2, penryn, bonnell, atom, silvermont, slm, goldmont, goldmont-plus, tremont, nehalem, corei7, westmere, sandybridge, corei7-avx, ivybridge, core-avx-i, haswell, core-avx2, broadwell, skylake, skylake-avx512, skx, cascadelake, cooperlake, cannonlake, icelake-client, rocketlake, icelake-server, tigerlake, sapphirerapids, alderlake, raptorlake, meteorlake, arrowlake, arrowlake-s, lunarlake, gracemont, pantherlake, sierraforest, grandridge, graniterapids, graniterapids-d, emeraldrapids, clearwaterforest, diamondrapids, knl, knm, k8, athlon64, athlon-fx, opteron, k8-sse3, athlon64-sse3, opteron-sse3, amdfam10, barcelona, btver1, btver2, bdver1, bdver2, bdver3, bdver4, znver1, znver2, znver3, znver4, znver5, x86-64, x86-64-v2, x86-64-v3, x86-64-v4
 configure:15477: $? = 1
@@ -4862,7 +4726,7 @@ configure: failed program was:
 | 
 configure:15487: result: no
 configure:15508: checking if gcc supports the armv82-a+dotprod feature flag and assembler supports dotprod instructions
-configure:15523: x86_64-apple-darwin17-clang -c -O3 -march=armv8.2-a+dotprod -Werror  conftest.c >&5
+configure:15523: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake -march=armv8.2-a+dotprod -Werror  conftest.c >&5
 error: unknown target CPU 'armv8.2-a+dotprod'
 note: valid target CPU values are: nocona, core2, penryn, bonnell, atom, silvermont, slm, goldmont, goldmont-plus, tremont, nehalem, corei7, westmere, sandybridge, corei7-avx, ivybridge, core-avx-i, haswell, core-avx2, broadwell, skylake, skylake-avx512, skx, cascadelake, cooperlake, cannonlake, icelake-client, rocketlake, icelake-server, tigerlake, sapphirerapids, alderlake, raptorlake, meteorlake, arrowlake, arrowlake-s, lunarlake, gracemont, pantherlake, sierraforest, grandridge, graniterapids, graniterapids-d, emeraldrapids, clearwaterforest, diamondrapids, knl, knm, k8, athlon64, athlon-fx, opteron, k8-sse3, athlon64-sse3, opteron-sse3, amdfam10, barcelona, btver1, btver2, bdver1, bdver2, bdver3, bdver4, znver1, znver2, znver3, znver4, znver5, x86-64, x86-64-v2, x86-64-v3, x86-64-v4
 configure:15523: $? = 1
@@ -4915,7 +4779,7 @@ configure: failed program was:
 | }
 | 
 configure:15533: result: no
-configure:15566: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:15566: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 conftest.c:41:8: error: thread-local storage is not supported for the current target
    41 | static __thread int foo;
       |        ^
@@ -4973,7 +4837,7 @@ configure: failed program was:
 configure:15579: checking for TLS support
 configure:15622: result: no
 configure:18097: checking for asm/unistd.h
-configure:18097: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18097: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:69:10: fatal error: 'asm/unistd.h' file not found
    69 | #include <asm/unistd.h>
       |          ^~~~~~~~~~~~~~
@@ -5051,7 +4915,7 @@ configure: failed program was:
 | #include <asm/unistd.h>
 configure:18097: result: no
 configure:18103: checking for endian.h
-configure:18103: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18103: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:69:10: fatal error: 'endian.h' file not found
    69 | #include <endian.h>
       |          ^~~~~~~~~~
@@ -5129,7 +4993,7 @@ configure: failed program was:
 | #include <endian.h>
 configure:18103: result: no
 configure:18109: checking for mqueue.h
-configure:18109: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18109: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:69:10: fatal error: 'mqueue.h' file not found
    69 | #include <mqueue.h>
       |          ^~~~~~~~~~
@@ -5207,7 +5071,7 @@ configure: failed program was:
 | #include <mqueue.h>
 configure:18109: result: no
 configure:18115: checking for sys/endian.h
-configure:18115: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18115: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:69:10: fatal error: 'sys/endian.h' file not found
    69 | #include <sys/endian.h>
       |          ^~~~~~~~~~~~~~
@@ -5285,7 +5149,7 @@ configure: failed program was:
 | #include <sys/endian.h>
 configure:18115: result: no
 configure:18121: checking for sys/epoll.h
-configure:18121: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18121: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:69:10: fatal error: 'sys/epoll.h' file not found
    69 | #include <sys/epoll.h>
       |          ^~~~~~~~~~~~~
@@ -5363,7 +5227,7 @@ configure: failed program was:
 | #include <sys/epoll.h>
 configure:18121: result: no
 configure:18127: checking for sys/eventfd.h
-configure:18127: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18127: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:69:10: fatal error: 'sys/eventfd.h' file not found
    69 | #include <sys/eventfd.h>
       |          ^~~~~~~~~~~~~~~
@@ -5441,7 +5305,7 @@ configure: failed program was:
 | #include <sys/eventfd.h>
 configure:18127: result: no
 configure:18133: checking for sys/klog.h
-configure:18133: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18133: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:69:10: fatal error: 'sys/klog.h' file not found
    69 | #include <sys/klog.h>
       |          ^~~~~~~~~~~~
@@ -5519,11 +5383,11 @@ configure: failed program was:
 | #include <sys/klog.h>
 configure:18133: result: no
 configure:18139: checking for sys/poll.h
-configure:18139: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18139: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:18139: $? = 0
 configure:18139: result: yes
 configure:18145: checking for sys/prctl.h
-configure:18145: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18145: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:70:10: fatal error: 'sys/prctl.h' file not found
    70 | #include <sys/prctl.h>
       |          ^~~~~~~~~~~~~
@@ -5602,11 +5466,11 @@ configure: failed program was:
 | #include <sys/prctl.h>
 configure:18145: result: no
 configure:18151: checking for sys/signal.h
-configure:18151: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18151: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:18151: $? = 0
 configure:18151: result: yes
 configure:18157: checking for sys/signalfd.h
-configure:18157: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18157: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:71:10: fatal error: 'sys/signalfd.h' file not found
    71 | #include <sys/signalfd.h>
       |          ^~~~~~~~~~~~~~~~
@@ -5686,11 +5550,11 @@ configure: failed program was:
 | #include <sys/signalfd.h>
 configure:18157: result: no
 configure:18163: checking for sys/syscall.h
-configure:18163: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18163: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:18163: $? = 0
 configure:18163: result: yes
 configure:18169: checking for sys/sysnvl.h
-configure:18169: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18169: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:72:10: fatal error: 'sys/sysnvl.h' file not found
    72 | #include <sys/sysnvl.h>
       |          ^~~~~~~~~~~~~~
@@ -5775,7 +5639,7 @@ configure:18175: result: yes
 configure:18181: checking for sys/types.h
 configure:18181: result: yes
 configure:18190: checking if <linux/futex.h> is usable
-configure:18210: x86_64-apple-darwin17-clang -c -O3 -D__user=  conftest.c >&5
+configure:18210: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake -D__user=  conftest.c >&5
 conftest.c:47:10: fatal error: 'linux/futex.h' file not found
    47 | #include <linux/futex.h>
       |          ^~~~~~~~~~~~~~~
@@ -5841,9 +5705,9 @@ configure: failed program was:
 | }
 configure:18223: result: no
 configure:18235: checking for uid_t
-configure:18235: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18235: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:18235: $? = 0
-configure:18235: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18235: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:77:20: error: expected expression
    77 | if (sizeof ((uid_t)))
       |                    ^
@@ -5933,9 +5797,9 @@ configure: failed program was:
 | }
 configure:18235: result: yes
 configure:18246: checking for gid_t
-configure:18246: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18246: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:18246: $? = 0
-configure:18246: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18246: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:77:20: error: expected expression
    77 | if (sizeof ((gid_t)))
       |                    ^
@@ -6025,9 +5889,9 @@ configure: failed program was:
 | }
 configure:18246: result: yes
 configure:18257: checking for off_t
-configure:18257: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18257: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:18257: $? = 0
-configure:18257: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18257: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:77:20: error: expected expression
    77 | if (sizeof ((off_t)))
       |                    ^
@@ -6117,9 +5981,9 @@ configure: failed program was:
 | }
 configure:18257: result: yes
 configure:18268: checking for size_t
-configure:18268: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18268: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 configure:18268: $? = 0
-configure:18268: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18268: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:77:21: error: expected expression
    77 | if (sizeof ((size_t)))
       |                     ^
@@ -6209,7 +6073,7 @@ configure: failed program was:
 | }
 configure:18268: result: yes
 configure:18282: checking for struct statx
-configure:18282: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:18282: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:54:5: error: invalid application of 'sizeof' to an incomplete type 'struct statx'
    54 | if (sizeof (struct statx))
       |     ^      ~~~~~~~~~~~~~~
@@ -6281,17 +6145,17 @@ configure:18282: result: no
 configure:18301: checking for working memcmp
 configure:18360: result: no
 configure:18374: checking for getpagesize
-configure:18374: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:18374: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 configure:18374: $? = 0
 configure:18374: result: yes
 configure:18385: checking for working mmap
 configure:18549: result: no
 configure:18559: checking for pthread_create in -lpthread
-configure:18588: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread   >&5
+configure:18588: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread   >&5
 configure:18588: $? = 0
 configure:18600: result: yes
 configure:18610: checking for clock_gettime in -lrt
-configure:18639: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lrt  -lpthread  >&5
+configure:18639: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lrt  -lpthread  >&5
 ld: library not found for -lrt
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18639: $? = 1
@@ -6363,7 +6227,7 @@ configure: failed program was:
 | }
 configure:18651: result: no
 configure:18661: checking for timer_delete in -lrt
-configure:18690: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lrt  -lpthread  >&5
+configure:18690: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lrt  -lpthread  >&5
 ld: library not found for -lrt
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18690: $? = 1
@@ -6435,7 +6299,7 @@ configure: failed program was:
 | }
 configure:18702: result: no
 configure:18713: checking for aligned_alloc
-configure:18713: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18713: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 conftest.c:64:6: warning: incompatible redeclaration of library function 'aligned_alloc' [-Wincompatible-library-redeclaration]
    64 | char aligned_alloc (void);
       |      ^
@@ -6443,7 +6307,7 @@ conftest.c:64:6: note: 'aligned_alloc' is a builtin with type 'void *(unsigned l
 1 warning generated.
 Undefined symbols for architecture x86_64:
   "_aligned_alloc", referenced from:
-      _main in conftest-ac843e.o
+      _main in conftest-585f4e.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18713: $? = 1
@@ -6528,14 +6392,14 @@ configure: failed program was:
 | }
 configure:18713: result: no
 configure:18719: checking for clock_gettime
-configure:18719: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18719: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:18719: $? = 0
 configure:18719: result: yes
 configure:18725: checking for copy_file_range
-configure:18725: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18725: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_copy_file_range", referenced from:
-      _main in conftest-6646e5.o
+      _main in conftest-71503b.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18725: $? = 1
@@ -6621,10 +6485,10 @@ configure: failed program was:
 | }
 configure:18725: result: no
 configure:18731: checking for epoll_create
-configure:18731: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18731: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_epoll_create", referenced from:
-      _main in conftest-d5167e.o
+      _main in conftest-69a175.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18731: $? = 1
@@ -6710,10 +6574,10 @@ configure: failed program was:
 | }
 configure:18731: result: no
 configure:18737: checking for epoll_pwait
-configure:18737: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18737: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_epoll_pwait", referenced from:
-      _main in conftest-91fc3f.o
+      _main in conftest-dedd47.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18737: $? = 1
@@ -6799,14 +6663,14 @@ configure: failed program was:
 | }
 configure:18737: result: no
 configure:18743: checking for getaddrinfo
-configure:18743: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18743: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:18743: $? = 0
 configure:18743: result: yes
 configure:18749: checking for klogctl
-configure:18749: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18749: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_klogctl", referenced from:
-      _main in conftest-262b91.o
+      _main in conftest-59bf25.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18749: $? = 1
@@ -6893,10 +6757,10 @@ configure: failed program was:
 | }
 configure:18749: result: no
 configure:18755: checking for mallinfo
-configure:18755: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18755: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_mallinfo", referenced from:
-      _main in conftest-293e1e.o
+      _main in conftest-a3e7d2.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18755: $? = 1
@@ -6983,7 +6847,7 @@ configure: failed program was:
 | }
 configure:18755: result: no
 configure:18761: checking for memchr
-configure:18761: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18761: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 conftest.c:66:6: warning: incompatible redeclaration of library function 'memchr' [-Wincompatible-library-redeclaration]
    66 | char memchr (void);
       |      ^
@@ -6992,10 +6856,10 @@ conftest.c:66:6: note: 'memchr' is a builtin with type 'void *(const void *, int
 configure:18761: $? = 0
 configure:18761: result: yes
 configure:18767: checking for memfd_create
-configure:18767: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18767: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_memfd_create", referenced from:
-      _main in conftest-719506.o
+      _main in conftest-5083ca.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18767: $? = 1
@@ -7083,7 +6947,7 @@ configure: failed program was:
 | }
 configure:18767: result: no
 configure:18773: checking for memset
-configure:18773: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18773: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 conftest.c:67:6: warning: incompatible redeclaration of library function 'memset' [-Wincompatible-library-redeclaration]
    67 | char memset (void);
       |      ^
@@ -7092,14 +6956,14 @@ conftest.c:67:6: note: 'memset' is a builtin with type 'void *(void *, int, unsi
 configure:18773: $? = 0
 configure:18773: result: yes
 configure:18779: checking for mkdir
-configure:18779: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18779: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:18779: $? = 0
 configure:18779: result: yes
 configure:18785: checking for mremap
-configure:18785: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18785: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_mremap", referenced from:
-      _main in conftest-8f2bea.o
+      _main in conftest-4af113.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18785: $? = 1
@@ -7189,10 +7053,10 @@ configure: failed program was:
 | }
 configure:18785: result: no
 configure:18791: checking for pipe2
-configure:18791: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18791: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_pipe2", referenced from:
-      _main in conftest-3bef23.o
+      _main in conftest-7b67fa.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18791: $? = 1
@@ -7282,10 +7146,10 @@ configure: failed program was:
 | }
 configure:18791: result: no
 configure:18797: checking for ppoll
-configure:18797: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18797: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_ppoll", referenced from:
-      _main in conftest-d263a2.o
+      _main in conftest-77addd.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18797: $? = 1
@@ -7375,10 +7239,10 @@ configure: failed program was:
 | }
 configure:18797: result: no
 configure:18803: checking for preadv
-configure:18803: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18803: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_preadv", referenced from:
-      _main in conftest-501d0c.o
+      _main in conftest-873e3d.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18803: $? = 1
@@ -7468,10 +7332,10 @@ configure: failed program was:
 | }
 configure:18803: result: no
 configure:18809: checking for preadv2
-configure:18809: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18809: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_preadv2", referenced from:
-      _main in conftest-607e4c.o
+      _main in conftest-ee6ae8.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18809: $? = 1
@@ -7561,10 +7425,10 @@ configure: failed program was:
 | }
 configure:18809: result: no
 configure:18815: checking for process_vm_readv
-configure:18815: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18815: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_process_vm_readv", referenced from:
-      _main in conftest-aa97ec.o
+      _main in conftest-6a4803.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18815: $? = 1
@@ -7654,10 +7518,10 @@ configure: failed program was:
 | }
 configure:18815: result: no
 configure:18821: checking for process_vm_writev
-configure:18821: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18821: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_process_vm_writev", referenced from:
-      _main in conftest-b968eb.o
+      _main in conftest-1b2730.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18821: $? = 1
@@ -7747,10 +7611,10 @@ configure: failed program was:
 | }
 configure:18821: result: no
 configure:18827: checking for pthread_barrier_init
-configure:18827: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18827: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_pthread_barrier_init", referenced from:
-      _main in conftest-e07228.o
+      _main in conftest-fcb94f.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18827: $? = 1
@@ -7840,10 +7704,10 @@ configure: failed program was:
 | }
 configure:18827: result: no
 configure:18833: checking for pthread_condattr_setclock
-configure:18833: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18833: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_pthread_condattr_setclock", referenced from:
-      _main in conftest-f6bf6e.o
+      _main in conftest-ceee4f.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18833: $? = 1
@@ -7933,10 +7797,10 @@ configure: failed program was:
 | }
 configure:18833: result: no
 configure:18839: checking for pthread_mutex_timedlock
-configure:18839: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18839: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_pthread_mutex_timedlock", referenced from:
-      _main in conftest-b98278.o
+      _main in conftest-7609f7.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18839: $? = 1
@@ -8026,10 +7890,10 @@ configure: failed program was:
 | }
 configure:18839: result: no
 configure:18845: checking for pthread_rwlock_timedrdlock
-configure:18845: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18845: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_pthread_rwlock_timedrdlock", referenced from:
-      _main in conftest-5647de.o
+      _main in conftest-db6bdc.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18845: $? = 1
@@ -8119,10 +7983,10 @@ configure: failed program was:
 | }
 configure:18845: result: no
 configure:18851: checking for pthread_rwlock_timedwrlock
-configure:18851: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18851: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_pthread_rwlock_timedwrlock", referenced from:
-      _main in conftest-7de6a9.o
+      _main in conftest-b03424.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18851: $? = 1
@@ -8212,14 +8076,14 @@ configure: failed program was:
 | }
 configure:18851: result: no
 configure:18857: checking for pthread_setname_np
-configure:18857: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18857: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:18857: $? = 0
 configure:18857: result: yes
 configure:18863: checking for pthread_spin_lock
-configure:18863: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18863: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_pthread_spin_lock", referenced from:
-      _main in conftest-f30f8d.o
+      _main in conftest-74fed5.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18863: $? = 1
@@ -8310,10 +8174,10 @@ configure: failed program was:
 | }
 configure:18863: result: no
 configure:18869: checking for pthread_yield
-configure:18869: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18869: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_pthread_yield", referenced from:
-      _main in conftest-9b7193.o
+      _main in conftest-e3bfed.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18869: $? = 1
@@ -8404,10 +8268,10 @@ configure: failed program was:
 | }
 configure:18869: result: no
 configure:18875: checking for pwritev
-configure:18875: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18875: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_pwritev", referenced from:
-      _main in conftest-ec32cd.o
+      _main in conftest-173bba.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18875: $? = 1
@@ -8498,10 +8362,10 @@ configure: failed program was:
 | }
 configure:18875: result: no
 configure:18881: checking for pwritev2
-configure:18881: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18881: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_pwritev2", referenced from:
-      _main in conftest-386b81.o
+      _main in conftest-e7a787.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18881: $? = 1
@@ -8592,10 +8456,10 @@ configure: failed program was:
 | }
 configure:18881: result: no
 configure:18887: checking for rawmemchr
-configure:18887: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18887: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_rawmemchr", referenced from:
-      _main in conftest-800fbd.o
+      _main in conftest-1642a7.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18887: $? = 1
@@ -8686,14 +8550,14 @@ configure: failed program was:
 | }
 configure:18887: result: no
 configure:18893: checking for readlinkat
-configure:18893: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18893: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:18893: $? = 0
 configure:18893: result: yes
 configure:18899: checking for reallocarray
-configure:18899: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18899: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_reallocarray", referenced from:
-      _main in conftest-91257d.o
+      _main in conftest-122115.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18899: $? = 1
@@ -8785,10 +8649,10 @@ configure: failed program was:
 | }
 configure:18899: result: no
 configure:18905: checking for semtimedop
-configure:18905: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18905: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_semtimedop", referenced from:
-      _main in conftest-edbc63.o
+      _main in conftest-70fa08.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18905: $? = 1
@@ -8880,14 +8744,14 @@ configure: failed program was:
 | }
 configure:18905: result: no
 configure:18911: checking for setcontext
-configure:18911: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18911: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:18911: $? = 0
 configure:18911: result: yes
 configure:18917: checking for signalfd
-configure:18917: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18917: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_signalfd", referenced from:
-      _main in conftest-57976d.o
+      _main in conftest-1e3055.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18917: $? = 1
@@ -8980,10 +8844,10 @@ configure: failed program was:
 | }
 configure:18917: result: no
 configure:18923: checking for sigwaitinfo
-configure:18923: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18923: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_sigwaitinfo", referenced from:
-      _main in conftest-d98120.o
+      _main in conftest-a46023.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18923: $? = 1
@@ -9076,7 +8940,7 @@ configure: failed program was:
 | }
 configure:18923: result: no
 configure:18929: checking for strchr
-configure:18929: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18929: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 conftest.c:72:6: warning: incompatible redeclaration of library function 'strchr' [-Wincompatible-library-redeclaration]
    72 | char strchr (void);
       |      ^
@@ -9085,7 +8949,7 @@ conftest.c:72:6: note: 'strchr' is a builtin with type 'char *(const char *, int
 configure:18929: $? = 0
 configure:18929: result: yes
 configure:18935: checking for strdup
-configure:18935: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18935: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 conftest.c:73:6: warning: incompatible redeclaration of library function 'strdup' [-Wincompatible-library-redeclaration]
    73 | char strdup (void);
       |      ^
@@ -9094,7 +8958,7 @@ conftest.c:73:6: note: 'strdup' is a builtin with type 'char *(const char *)'
 configure:18935: $? = 0
 configure:18935: result: yes
 configure:18941: checking for strpbrk
-configure:18941: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18941: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 conftest.c:74:6: warning: incompatible redeclaration of library function 'strpbrk' [-Wincompatible-library-redeclaration]
    74 | char strpbrk (void);
       |      ^
@@ -9103,7 +8967,7 @@ conftest.c:74:6: note: 'strpbrk' is a builtin with type 'char *(const char *, co
 configure:18941: $? = 0
 configure:18941: result: yes
 configure:18947: checking for strrchr
-configure:18947: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18947: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 conftest.c:75:6: warning: incompatible redeclaration of library function 'strrchr' [-Wincompatible-library-redeclaration]
    75 | char strrchr (void);
       |      ^
@@ -9112,7 +8976,7 @@ conftest.c:75:6: note: 'strrchr' is a builtin with type 'char *(const char *, in
 configure:18947: $? = 0
 configure:18947: result: yes
 configure:18953: checking for strstr
-configure:18953: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18953: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 conftest.c:76:6: warning: incompatible redeclaration of library function 'strstr' [-Wincompatible-library-redeclaration]
    76 | char strstr (void);
       |      ^
@@ -9121,19 +8985,19 @@ conftest.c:76:6: note: 'strstr' is a builtin with type 'char *(const char *, con
 configure:18953: $? = 0
 configure:18953: result: yes
 configure:18959: checking for swapcontext
-configure:18959: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18959: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:18959: $? = 0
 configure:18959: result: yes
 configure:18965: checking for syscall
-configure:18965: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18965: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:18965: $? = 0
 configure:18965: result: yes
 configure:18971: checking for utimensat
-configure:18971: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18971: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:18971: $? = 0
 configure:18971: result: yes
 configure:18977: checking for mempcpy
-configure:18977: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18977: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 conftest.c:80:6: warning: incompatible redeclaration of library function 'mempcpy' [-Wincompatible-library-redeclaration]
    80 | char mempcpy (void);
       |      ^
@@ -9141,7 +9005,7 @@ conftest.c:80:6: note: 'mempcpy' is a builtin with type 'void *(void *, const vo
 1 warning generated.
 Undefined symbols for architecture x86_64:
   "_mempcpy", referenced from:
-      _main in conftest-624b69.o
+      _main in conftest-88926c.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:18977: $? = 1
@@ -9242,15 +9106,15 @@ configure: failed program was:
 | }
 configure:18977: result: no
 configure:18983: checking for strlcat
-configure:18983: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18983: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:18983: $? = 0
 configure:18983: result: yes
 configure:18989: checking for strlcpy
-configure:18989: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18989: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:18989: $? = 0
 configure:18989: result: yes
 configure:18995: checking for stpncpy
-configure:18995: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:18995: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 conftest.c:82:6: warning: incompatible redeclaration of library function 'stpncpy' [-Wincompatible-library-redeclaration]
    82 | char stpncpy (void);
       |      ^
@@ -9259,10 +9123,10 @@ conftest.c:82:6: note: 'stpncpy' is a builtin with type 'char *(char *, const ch
 configure:18995: $? = 0
 configure:18995: result: yes
 configure:19001: checking for strchrnul
-configure:19001: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19001: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_strchrnul", referenced from:
-      _main in conftest-175eb7.o
+      _main in conftest-ecc47b.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19001: $? = 1
@@ -9366,10 +9230,10 @@ configure: failed program was:
 | }
 configure:19001: result: no
 configure:19007: checking for memrchr
-configure:19007: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19007: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_memrchr", referenced from:
-      _main in conftest-aaff8a.o
+      _main in conftest-8143dd.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19007: $? = 1
@@ -9473,7 +9337,7 @@ configure: failed program was:
 | }
 configure:19007: result: no
 configure:19013: checking for strndup
-configure:19013: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19013: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 conftest.c:83:6: warning: incompatible redeclaration of library function 'strndup' [-Wincompatible-library-redeclaration]
    83 | char strndup (void);
       |      ^
@@ -9482,10 +9346,10 @@ conftest.c:83:6: note: 'strndup' is a builtin with type 'char *(const char *, un
 configure:19013: $? = 0
 configure:19013: result: yes
 configure:19019: checking for close_range
-configure:19019: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19019: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_close_range", referenced from:
-      _main in conftest-10eab6.o
+      _main in conftest-788d80.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19019: $? = 1
@@ -9590,14 +9454,14 @@ configure: failed program was:
 | }
 configure:19019: result: no
 configure:19025: checking for wcsncpy
-configure:19025: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19025: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:19025: $? = 0
 configure:19025: result: yes
 configure:19031: checking for free_aligned_sized
-configure:19031: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19031: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_free_aligned_sized", referenced from:
-      _main in conftest-4bffa5.o
+      _main in conftest-68bed2.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19031: $? = 1
@@ -9703,22 +9567,22 @@ configure: failed program was:
 | }
 configure:19031: result: no
 configure:19037: checking for sbrk
-configure:19037: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19037: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:19037: $? = 0
 configure:19037: result: yes
 configure:19043: checking for wcpncpy
-configure:19043: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19043: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:19043: $? = 0
 configure:19043: result: yes
 configure:19049: checking for wcsxfrm
-configure:19049: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19049: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:19049: $? = 0
 configure:19049: result: yes
 configure:19055: checking for sem_timedwait
-configure:19055: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19055: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_sem_timedwait", referenced from:
-      _main in conftest-4b5042.o
+      _main in conftest-4eabb4.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19055: $? = 1
@@ -9827,10 +9691,10 @@ configure: failed program was:
 | }
 configure:19055: result: no
 configure:19061: checking for sem_clockwait_np
-configure:19061: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19061: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_sem_clockwait_np", referenced from:
-      _main in conftest-fde183.o
+      _main in conftest-9e52d3.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19061: $? = 1
@@ -9939,14 +9803,14 @@ configure: failed program was:
 | }
 configure:19061: result: no
 configure:19067: checking for fdatasync
-configure:19067: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19067: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 configure:19067: $? = 0
 configure:19067: result: yes
 configure:19073: checking for getrandom
-configure:19073: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19073: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_getrandom", referenced from:
-      _main in conftest-28ab1f.o
+      _main in conftest-083501.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19073: $? = 1
@@ -10056,10 +9920,10 @@ configure: failed program was:
 | }
 configure:19073: result: no
 configure:19079: checking for getrlimitusage
-configure:19079: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19079: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_getrlimitusage", referenced from:
-      _main in conftest-217c98.o
+      _main in conftest-c13e92.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19079: $? = 1
@@ -10169,10 +10033,10 @@ configure: failed program was:
 | }
 configure:19079: result: no
 configure:19085: checking for timer_delete
-configure:19085: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19085: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_timer_delete", referenced from:
-      _main in conftest-8786a9.o
+      _main in conftest-8516d5.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19085: $? = 1
@@ -10282,10 +10146,10 @@ configure: failed program was:
 | }
 configure:19085: result: no
 configure:19091: checking for fchroot
-configure:19091: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19091: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_fchroot", referenced from:
-      _main in conftest-0f4caf.o
+      _main in conftest-2e5203.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19091: $? = 1
@@ -10395,10 +10259,10 @@ configure: failed program was:
 | }
 configure:19091: result: no
 configure:19097: checking for setcred
-configure:19097: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lpthread  >&5
+configure:19097: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lpthread  >&5
 Undefined symbols for architecture x86_64:
   "_setcred", referenced from:
-      _main in conftest-b9817a.o
+      _main in conftest-8e4363.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19097: $? = 1
@@ -10703,7 +10567,7 @@ configure: failed program was:
 | }
 configure:19578: result: no
 configure:19600: checking if static libc is available
-configure:19613: x86_64-apple-darwin17-clang -o conftest -O3  -nostdlib -lc -static conftest.c  >&5
+configure:19613: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake  -nostdlib -lc -static conftest.c  >&5
 ld: library not found for -lc
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:19613: $? = 1
@@ -10967,7 +10831,7 @@ configure: failed program was:
 | 
 configure:19760: result: no
 configure:19780: checking for __builtin_popcount()
-configure:19797: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:19797: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 conftest.c:79:3: warning: ignoring return value of function declared with const attribute [-Wunused-value]
    79 |   __builtin_popcount(2);
       |   ^~~~~~~~~~~~~~~~~~ ~
@@ -10975,7 +10839,7 @@ conftest.c:79:3: warning: ignoring return value of function declared with const 
 configure:19797: $? = 0
 configure:19800: result: yes
 configure:19817: checking for __builtin_clz()
-configure:19834: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:19834: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 conftest.c:80:3: warning: ignoring return value of function declared with const attribute [-Wunused-value]
    80 |   __builtin_clz(2);
       |   ^~~~~~~~~~~~~ ~
@@ -10983,7 +10847,7 @@ conftest.c:80:3: warning: ignoring return value of function declared with const 
 configure:19834: $? = 0
 configure:19837: result: yes
 configure:19854: checking for __builtin_ctz()
-configure:19871: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:19871: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 conftest.c:81:3: warning: ignoring return value of function declared with const attribute [-Wunused-value]
    81 |   __builtin_ctz(2);
       |   ^~~~~~~~~~~~~ ~
@@ -10995,11 +10859,11 @@ configure:19913: x86_64-apple-darwin17-clang -o conftest -m64 -arch x86_64   con
 configure:19913: $? = 0
 configure:19917: result: yes
 configure:20005: checking if gcc supports __sync_add_and_fetch on uint64_t for all targets
-configure:20024: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:20024: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 configure:20024: $? = 0
 configure:20080: result: yes
 configure:20099: checking if platform has openat2 syscall
-configure:20117: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:20117: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 conftest.c:84:10: error: use of undeclared identifier '__NR_openat2'
    84 |   return __NR_openat2
       |          ^
@@ -11096,7 +10960,7 @@ configure: failed program was:
 | }
 configure:20127: result: no
 configure:20148: checking if platform has openssl crypto
-configure:20166: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c -lcrypto >&5
+configure:20166: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c -lcrypto >&5
 conftest.c:78:12: fatal error: 'openssl/crypto.h' file not found
    78 |   #include <openssl/crypto.h>
       |            ^~~~~~~~~~~~~~~~~~
@@ -11193,7 +11057,7 @@ configure: failed program was:
 | }
 configure:20176: result: no
 configure:20194: checking if platform has aio_readv
-configure:20213: x86_64-apple-darwin17-clang -o conftest -O3   conftest.c  >&5
+configure:20213: x86_64-apple-darwin17-clang -o conftest -O3 -march=skylake -mtune=skylake   conftest.c  >&5
 conftest.c:85:3: error: call to undeclared function 'aio_readv'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
    85 |   aio_readv(NULL);
       |   ^
@@ -11403,7 +11267,7 @@ configure: failed program was:
 | }
 configure:20420: result: no
 configure:20444: checking for AT_GNU_LIBC_C17_ALIGNED_ALLOC
-configure:20463: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:20463: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:79:10: fatal error: 'features.h' file not found
    79 | #include <features.h>
       |          ^~~~~~~~~~~~
@@ -11503,7 +11367,7 @@ configure: failed program was:
 | }
 configure:20475: result: no
 configure:20483: checking for thrd_create()
-configure:20499: x86_64-apple-darwin17-clang -c -O3  conftest.c >&5
+configure:20499: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake  conftest.c >&5
 conftest.c:79:10: fatal error: 'threads.h' file not found
    79 | #include <threads.h>
       |          ^~~~~~~~~~~
@@ -11600,7 +11464,7 @@ configure: failed program was:
 | }
 configure:20509: result: no
 configure:20529: checking for sha3
-configure:20544: x86_64-apple-darwin17-clang -c -O3 -march=armv8.2-a+sha3  conftest.c >&5
+configure:20544: x86_64-apple-darwin17-clang -c -O3 -march=skylake -mtune=skylake -march=armv8.2-a+sha3  conftest.c >&5
 error: unknown target CPU 'armv8.2-a+sha3'
 note: valid target CPU values are: nocona, core2, penryn, bonnell, atom, silvermont, slm, goldmont, goldmont-plus, tremont, nehalem, corei7, westmere, sandybridge, corei7-avx, ivybridge, core-avx-i, haswell, core-avx2, broadwell, skylake, skylake-avx512, skx, cascadelake, cooperlake, cannonlake, icelake-client, rocketlake, icelake-server, tigerlake, sapphirerapids, alderlake, raptorlake, meteorlake, arrowlake, arrowlake-s, lunarlake, gracemont, pantherlake, sierraforest, grandridge, graniterapids, graniterapids-d, emeraldrapids, clearwaterforest, diamondrapids, knl, knm, k8, athlon64, athlon-fx, opteron, k8-sse3, athlon64-sse3, opteron-sse3, amdfam10, barcelona, btver1, btver2, bdver1, bdver2, bdver3, bdver4, znver1, znver2, znver3, znver4, znver5, x86-64, x86-64-v2, x86-64-v3, x86-64-v4
 configure:20544: $? = 1
@@ -12083,13 +11947,13 @@ ac_cv_env_CCC_value=
 ac_cv_env_CC_set=set
 ac_cv_env_CC_value=x86_64-apple-darwin17-clang
 ac_cv_env_CFLAGS_set=set
-ac_cv_env_CFLAGS_value=-O3
+ac_cv_env_CFLAGS_value='-O3 -march=skylake -mtune=skylake'
 ac_cv_env_CPPFLAGS_set=
 ac_cv_env_CPPFLAGS_value=
 ac_cv_env_CPP_set=
 ac_cv_env_CPP_value=
 ac_cv_env_CXXFLAGS_set=set
-ac_cv_env_CXXFLAGS_value=-O3
+ac_cv_env_CXXFLAGS_value='-O3 -march=skylake -mtune=skylake'
 ac_cv_env_CXX_set=set
 ac_cv_env_CXX_value=x86_64-apple-darwin17-clang++
 ac_cv_env_LDFLAGS_set=
@@ -12335,9 +12199,9 @@ BUILD_VPCLMULQDQ_TESTS_TRUE=''
 CC='x86_64-apple-darwin17-clang'
 CCAS='x86_64-apple-darwin17-clang'
 CCASDEPMODE='depmode=gcc3'
-CCASFLAGS='-O3'
+CCASFLAGS='-O3 -march=skylake -mtune=skylake'
 CCDEPMODE='depmode=gcc3'
-CFLAGS='-O3'
+CFLAGS='-O3 -march=skylake -mtune=skylake'
 CFLAGS_MPI='-g -O -fno-omit-frame-pointer -Wall -dynamic'
 COMPILER_IS_CLANG_FALSE='#'
 COMPILER_IS_CLANG_TRUE=''
@@ -12349,7 +12213,7 @@ CSCOPE='cscope'
 CTAGS='ctags'
 CXX='x86_64-apple-darwin17-clang++'
 CXXDEPMODE='depmode=gcc3'
-CXXFLAGS='-O3'
+CXXFLAGS='-O3 -march=skylake -mtune=skylake'
 CXX_CAN_INCLUDE_CONDITION_VARIABLE_HEADER_FALSE=''
 CXX_CAN_INCLUDE_CONDITION_VARIABLE_HEADER_TRUE='#'
 CXX_CAN_INCLUDE_THREAD_HEADER_FALSE=''
