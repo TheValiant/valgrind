@@ -1,6 +1,0 @@
-m_syswrap/libcoregrind_amd64_darwin_a-syscall-amd64-freebsd.o: \
-  m_syswrap/syscall-amd64-freebsd.S pub_core_basics_asm.h \
-  ../include/pub_tool_basics_asm.h ../config.h
-pub_core_basics_asm.h:
-../include/pub_tool_basics_asm.h:
-../config.h:

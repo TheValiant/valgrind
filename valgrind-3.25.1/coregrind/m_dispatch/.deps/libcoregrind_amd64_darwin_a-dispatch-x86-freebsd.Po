@@ -1,6 +1,0 @@
-m_dispatch/libcoregrind_amd64_darwin_a-dispatch-x86-freebsd.o: \
-  m_dispatch/dispatch-x86-freebsd.S pub_core_basics_asm.h \
-  ../include/pub_tool_basics_asm.h ../config.h
-pub_core_basics_asm.h:
-../include/pub_tool_basics_asm.h:
-../config.h:

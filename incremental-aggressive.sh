@@ -83,24 +83,31 @@ else
     echo "   ✅ Found macOS SDK: MacOSX10.13.sdk.tar.xz"
 fi
 
-# Auto-download Valgrind source if needed
-if [ ! -d "valgrind-3.25.1" ]; then
-    echo "📥 Downloading Valgrind 3.25.1 source..."
-    if [ ! -f "valgrind-3.25.1.tar.bz2" ]; then
-        echo "   📥 Downloading from sourceware.org..."
-        wget https://sourceware.org/pub/valgrind/valgrind-3.25.1.tar.bz2 || {
-            echo "❌ Failed to download Valgrind source"
-            echo "   Please download manually from: https://sourceware.org/pub/valgrind/"
-            exit 1
-        }
-    fi
-    
-    echo "   📦 Extracting Valgrind source..."
-    tar -xvf valgrind-3.25.1.tar.bz2 || exit 1
-    echo "   ✅ Valgrind source extracted"
+# ALWAYS start with fresh Valgrind source (overwrite existing)
+echo "📥 Ensuring fresh Valgrind 3.25.1 source..."
+
+# Download if archive doesn't exist
+if [ ! -f "valgrind-3.25.1.tar.bz2" ]; then
+    echo "   📥 Downloading from sourceware.org..."
+    wget https://sourceware.org/pub/valgrind/valgrind-3.25.1.tar.bz2 || {
+        echo "❌ Failed to download Valgrind source"
+        echo "   Please download manually from: https://sourceware.org/pub/valgrind/"
+        exit 1
+    }
+    echo "   ✅ Valgrind source downloaded"
 else
-    echo "   ✅ Found Valgrind source: valgrind-3.25.1/"
+    echo "   ✅ Found Valgrind archive: valgrind-3.25.1.tar.bz2"
 fi
+
+# Always remove existing directory and extract fresh
+if [ -d "valgrind-3.25.1" ]; then
+    echo "   🗑️ Removing existing valgrind-3.25.1 directory for fresh extraction..."
+    rm -rf valgrind-3.25.1 || exit 1
+fi
+
+echo "   📦 Extracting fresh Valgrind source..."
+tar -xf valgrind-3.25.1.tar.bz2 || exit 1
+echo "   ✅ Fresh Valgrind source extracted and ready"
 
 # Set up environment (safe to repeat)
 OSXCROSS_ROOT=$(pwd)/osxcross
