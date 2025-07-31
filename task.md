@@ -113,6 +113,9 @@ This is the most critical step, where you tell Valgrind's build system to use yo
     ./configure --host=x86_64-apple-darwin19 --target=x86_64-apple-darwin19 \
                 CC=x86_64-apple-darwin19-clang \
                 CXX=x86_64-apple-darwin19-clang++ \
+
+
+
                 LDFLAGS="-static -static-libgcc -static-libstdc++ -flto=full -Wl,-dead_strip" \
                 --enable-only64bit \
                 --prefix=/usr/local 2>&1 | tee configure.log
