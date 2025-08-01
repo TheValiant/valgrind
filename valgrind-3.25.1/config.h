@@ -5,37 +5,37 @@
 /* #undef BIONIC_LIBC */
 
 /* DARWIN_VERS value for Mac OS X 10.10 */
-#define DARWIN_10_10 101000
+/* #undef DARWIN_10_10 */
 
 /* DARWIN_VERS value for Mac OS X 10.11 */
-#define DARWIN_10_11 101100
+/* #undef DARWIN_10_11 */
 
 /* DARWIN_VERS value for macOS 10.12 */
-#define DARWIN_10_12 101200
+/* #undef DARWIN_10_12 */
 
 /* DARWIN_VERS value for macOS 10.13 */
-#define DARWIN_10_13 101300
+/* #undef DARWIN_10_13 */
 
 /* DARWIN_VERS value for Mac OS X 10.5 */
-#define DARWIN_10_5 100500
+/* #undef DARWIN_10_5 */
 
 /* DARWIN_VERS value for Mac OS X 10.6 */
-#define DARWIN_10_6 100600
+/* #undef DARWIN_10_6 */
 
 /* DARWIN_VERS value for Mac OS X 10.7 */
-#define DARWIN_10_7 100700
+/* #undef DARWIN_10_7 */
 
 /* DARWIN_VERS value for Mac OS X 10.8 */
-#define DARWIN_10_8 100800
+/* #undef DARWIN_10_8 */
 
 /* DARWIN_VERS value for Mac OS X 10.9 */
-#define DARWIN_10_9 100900
+/* #undef DARWIN_10_9 */
 
 /* Define to 1 if you're using Darwin */
-#define DARWIN_LIBC 1
+/* #undef DARWIN_LIBC */
 
 /* Darwin / Mac OS X version */
-#define DARWIN_VERS DARWIN_10_13
+/* #undef DARWIN_VERS */
 
 /* Disable intercept pthread_spin_lock() on MIPS32, MIPS64 and nanoMIPS. */
 /* #undef DISABLE_PTHREAD_SPINLOCK_INTERCEPT */
@@ -63,25 +63,25 @@
 
 /* Define to 1 if index() and strlen() have been optimized heavily (x86 glibc
    >= 2.12) */
-/* #undef GLIBC_MANDATORY_INDEX_AND_STRLEN_REDIRECT */
+#define GLIBC_MANDATORY_INDEX_AND_STRLEN_REDIRECT 1
 
 /* Define to 1 if strlen() has been optimized heavily (amd64 glibc >= 2.10) */
-/* #undef GLIBC_MANDATORY_STRLEN_REDIRECT */
+#define GLIBC_MANDATORY_STRLEN_REDIRECT 1
 
 /* Define to 1 if you have the 'aligned_alloc' function. */
-/* #undef HAVE_ALIGNED_ALLOC */
+#define HAVE_ALIGNED_ALLOC 1
 
 /* Define to 1 if you have the <asm/unistd.h> header file. */
-/* #undef HAVE_ASM_UNISTD_H */
+#define HAVE_ASM_UNISTD_H 1
 
 /* Define to 1 if as supports fxsave64/fxrstor64. */
 #define HAVE_AS_AMD64_FXSAVE64 1
 
 /* Define to 1 if as supports floating point phased out category. */
-#define HAVE_AS_PPC_FPPO 1
+/* #undef HAVE_AS_PPC_FPPO */
 
 /* Define to 1 if as supports mtocrf/mfocrf. */
-#define HAVE_AS_PPC_MFTOCRF 1
+/* #undef HAVE_AS_PPC_MFTOCRF */
 
 /* Define to 1 if gcc supports __sync_bool_compare_and_swap() and
    __sync_add_and_fetch() for the primary target */
@@ -110,34 +110,34 @@
 #define HAVE_CLOCK_MONOTONIC 1
 
 /* Define to 1 if you have the 'close_range' function. */
-/* #undef HAVE_CLOSE_RANGE */
+#define HAVE_CLOSE_RANGE 1
 
 /* Define to 1 if you have the 'copy_file_range' function. */
-/* #undef HAVE_COPY_FILE_RANGE */
+#define HAVE_COPY_FILE_RANGE 1
 
 /* Define to 1 if you have a dlinfo that can do RTLD_DI_TLS_MODID. */
-/* #undef HAVE_DLINFO_RTLD_DI_TLS_MODID */
+#define HAVE_DLINFO_RTLD_DI_TLS_MODID 1
 
 /* Define to 1 if the system has the type 'Elf32_Chdr'. */
-/* #undef HAVE_ELF32_CHDR */
+#define HAVE_ELF32_CHDR 1
 
 /* Define to 1 if the system has the type 'Elf64_Chdr'. */
-/* #undef HAVE_ELF64_CHDR */
+#define HAVE_ELF64_CHDR 1
 
 /* Define to 1 if you have the <endian.h> header file. */
-/* #undef HAVE_ENDIAN_H */
+#define HAVE_ENDIAN_H 1
 
 /* Define to 1 if you have the 'epoll_create' function. */
-/* #undef HAVE_EPOLL_CREATE */
+#define HAVE_EPOLL_CREATE 1
 
 /* Define to 1 if you have the 'epoll_pwait' function. */
-/* #undef HAVE_EPOLL_PWAIT */
+#define HAVE_EPOLL_PWAIT 1
 
 /* Define to 1 if you have the 'eventfd' function. */
-/* #undef HAVE_EVENTFD */
+#define HAVE_EVENTFD 1
 
 /* Define to 1 if you have the `eventfd_read' function. */
-/* #undef HAVE_EVENTFD_READ */
+#define HAVE_EVENTFD_READ 1
 
 /* Define to 1 if you have the 'fchroot' function. */
 /* #undef HAVE_FCHROOT */
@@ -155,46 +155,46 @@
 #define HAVE_GETPAGESIZE 1
 
 /* Define to 1 if you have the 'getrandom' function. */
-/* #undef HAVE_GETRANDOM */
+#define HAVE_GETRANDOM 1
 
 /* Define to 1 if you have the 'getrlimitusage' function. */
 /* #undef HAVE_GETRLIMITUSAGE */
 
 /* Define to 1 if you have GNU libc C17 aligned_alloc. */
-/* #undef HAVE_GNU_LIBC_C17_ALIGNED_ALLOC */
+#define HAVE_GNU_LIBC_C17_ALIGNED_ALLOC 1
 
 /* Define to 1 if you have the `features.h' header. */
-/* #undef HAVE_HEADER_FEATURES_H */
+#define HAVE_HEADER_FEATURES_H 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the 'klogctl' function. */
-/* #undef HAVE_KLOGCTL */
+#define HAVE_KLOGCTL 1
 
 /* Define to 1 if you have the 'pthread' library (-lpthread). */
 #define HAVE_LIBPTHREAD 1
 
 /* Define to 1 if you have the 'rt' library (-lrt). */
-/* #undef HAVE_LIBRT */
+#define HAVE_LIBRT 1
 
 /* Define to 1 if you have the 'scf' library (-lscf). */
 /* #undef HAVE_LIBSCF */
 
 /* Define to 1 if you have the 'mallinfo' function. */
-/* #undef HAVE_MALLINFO */
+#define HAVE_MALLINFO 1
 
 /* Define to 1 if you have the 'memchr' function. */
 #define HAVE_MEMCHR 1
 
 /* Define to 1 if you have the 'memfd_create' function. */
-/* #undef HAVE_MEMFD_CREATE */
+#define HAVE_MEMFD_CREATE 1
 
 /* Define to 1 if you have the 'mempcpy' function. */
-/* #undef HAVE_MEMPCPY */
+#define HAVE_MEMPCPY 1
 
 /* Define to 1 if you have the 'memrchr' function. */
-/* #undef HAVE_MEMRCHR */
+#define HAVE_MEMRCHR 1
 
 /* Define to 1 if you have the 'memset' function. */
 #define HAVE_MEMSET 1
@@ -203,110 +203,110 @@
 #define HAVE_MKDIR 1
 
 /* Define to 1 if you have a working 'mmap' system call. */
-/* #undef HAVE_MMAP */
+#define HAVE_MMAP 1
 
 /* Define to 1 if you have the <mqueue.h> header file. */
-/* #undef HAVE_MQUEUE_H */
+#define HAVE_MQUEUE_H 1
 
 /* Define to 1 if you have the 'mremap' function. */
-/* #undef HAVE_MREMAP */
+#define HAVE_MREMAP 1
 
 /* Define to 1 if you have the 'pipe2' function. */
-/* #undef HAVE_PIPE2 */
+#define HAVE_PIPE2 1
 
 /* Define to 1 if you have the 'ppoll' function. */
-/* #undef HAVE_PPOLL */
+#define HAVE_PPOLL 1
 
 /* Define to 1 if you have the 'preadv' function. */
-/* #undef HAVE_PREADV */
+#define HAVE_PREADV 1
 
 /* Define to 1 if you have the 'preadv2' function. */
-/* #undef HAVE_PREADV2 */
+#define HAVE_PREADV2 1
 
 /* Define to 1 if you have the 'process_vm_readv' function. */
-/* #undef HAVE_PROCESS_VM_READV */
+#define HAVE_PROCESS_VM_READV 1
 
 /* Define to 1 if you have the 'process_vm_writev' function. */
-/* #undef HAVE_PROCESS_VM_WRITEV */
+#define HAVE_PROCESS_VM_WRITEV 1
 
 /* Define to 1 if you have the 'pthread_barrier_init' function. */
-/* #undef HAVE_PTHREAD_BARRIER_INIT */
+#define HAVE_PTHREAD_BARRIER_INIT 1
 
 /* Define to 1 if you have the 'pthread_condattr_setclock' function. */
-/* #undef HAVE_PTHREAD_CONDATTR_SETCLOCK */
+#define HAVE_PTHREAD_CONDATTR_SETCLOCK 1
 
 /* Define to 1 if you have the `pthread_create@glibc2.0' function. */
 /* #undef HAVE_PTHREAD_CREATE_GLIBC_2_0 */
 
 /* Define to 1 if you have the `PTHREAD_MUTEX_ADAPTIVE_NP' constant. */
-/* #undef HAVE_PTHREAD_MUTEX_ADAPTIVE_NP */
+#define HAVE_PTHREAD_MUTEX_ADAPTIVE_NP 1
 
 /* Define to 1 if you have the `PTHREAD_MUTEX_ERRORCHECK_NP' constant. */
-/* #undef HAVE_PTHREAD_MUTEX_ERRORCHECK_NP */
+#define HAVE_PTHREAD_MUTEX_ERRORCHECK_NP 1
 
 /* Define to 1 if you have the `PTHREAD_MUTEX_RECURSIVE_NP' constant. */
-/* #undef HAVE_PTHREAD_MUTEX_RECURSIVE_NP */
+#define HAVE_PTHREAD_MUTEX_RECURSIVE_NP 1
 
 /* Define to 1 if you have the 'pthread_mutex_timedlock' function. */
-/* #undef HAVE_PTHREAD_MUTEX_TIMEDLOCK */
+#define HAVE_PTHREAD_MUTEX_TIMEDLOCK 1
 
 /* Define to 1 if pthread_mutex_t has a member __data.__kind. */
-/* #undef HAVE_PTHREAD_MUTEX_T__DATA__KIND */
+#define HAVE_PTHREAD_MUTEX_T__DATA__KIND 1
 
 /* Define to 1 if pthread_mutex_t has a member called __m_kind. */
 /* #undef HAVE_PTHREAD_MUTEX_T__M_KIND */
 
 /* Define to 1 if you have the `PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP'
    constant. */
-/* #undef HAVE_PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP */
+#define HAVE_PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP 1
 
 /* Define to 1 if you have the `pthread_rwlock_t' type. */
 #define HAVE_PTHREAD_RWLOCK_T 1
 
 /* Define to 1 if you have the 'pthread_rwlock_timedrdlock' function. */
-/* #undef HAVE_PTHREAD_RWLOCK_TIMEDRDLOCK */
+#define HAVE_PTHREAD_RWLOCK_TIMEDRDLOCK 1
 
 /* Define to 1 if you have the 'pthread_rwlock_timedwrlock' function. */
-/* #undef HAVE_PTHREAD_RWLOCK_TIMEDWRLOCK */
+#define HAVE_PTHREAD_RWLOCK_TIMEDWRLOCK 1
 
 /* Define to 1 if you have the 'pthread_setname_np' function. */
 #define HAVE_PTHREAD_SETNAME_NP 1
 
 /* Define to 1 if you have the 'pthread_spin_lock' function. */
-/* #undef HAVE_PTHREAD_SPIN_LOCK */
+#define HAVE_PTHREAD_SPIN_LOCK 1
 
 /* Define to 1 if you have the 'pthread_yield' function. */
 /* #undef HAVE_PTHREAD_YIELD */
 
 /* Define to 1 if you have the `PTRACE_GETREGS' ptrace request. */
-/* #undef HAVE_PTRACE_GETREGS */
+#define HAVE_PTRACE_GETREGS 1
 
 /* Define to 1 if you have the 'pwritev' function. */
-/* #undef HAVE_PWRITEV */
+#define HAVE_PWRITEV 1
 
 /* Define to 1 if you have the 'pwritev2' function. */
-/* #undef HAVE_PWRITEV2 */
+#define HAVE_PWRITEV2 1
 
 /* Define to 1 if you have the 'rawmemchr' function. */
-/* #undef HAVE_RAWMEMCHR */
+#define HAVE_RAWMEMCHR 1
 
 /* Define to 1 if you have the 'readlinkat' function. */
 #define HAVE_READLINKAT 1
 
 /* Define to 1 if you have the 'reallocarray' function. */
-/* #undef HAVE_REALLOCARRAY */
+#define HAVE_REALLOCARRAY 1
 
 /* Define to 1 if you have the 'sbrk' function. */
 #define HAVE_SBRK 1
 
 /* Define to 1 if you have the 'semtimedop' function. */
-/* #undef HAVE_SEMTIMEDOP */
+#define HAVE_SEMTIMEDOP 1
 
 /* Define to 1 if you have the 'sem_clockwait_np' function. */
 /* #undef HAVE_SEM_CLOCKWAIT_NP */
 
 /* Define to 1 if you have the 'sem_timedwait' function. */
-/* #undef HAVE_SEM_TIMEDWAIT */
+#define HAVE_SEM_TIMEDWAIT 1
 
 /* Define to 1 if you have the 'setcontext' function. */
 #define HAVE_SETCONTEXT 1
@@ -315,13 +315,13 @@
 /* #undef HAVE_SETCRED */
 
 /* Define to 1 if libstd++ supports annotating shared pointers */
-/* #undef HAVE_SHARED_POINTER_ANNOTATION */
+#define HAVE_SHARED_POINTER_ANNOTATION 1
 
 /* Define to 1 if you have the 'signalfd' function. */
-/* #undef HAVE_SIGNALFD */
+#define HAVE_SIGNALFD 1
 
 /* Define to 1 if you have the 'sigwaitinfo' function. */
-/* #undef HAVE_SIGWAITINFO */
+#define HAVE_SIGWAITINFO 1
 
 /* Define to 1 if you have the <stdint.h> header file. */
 #define HAVE_STDINT_H 1
@@ -339,7 +339,7 @@
 #define HAVE_STRCHR 1
 
 /* Define to 1 if you have the 'strchrnul' function. */
-/* #undef HAVE_STRCHRNUL */
+#define HAVE_STRCHRNUL 1
 
 /* Define to 1 if you have the 'strdup' function. */
 #define HAVE_STRDUP 1
@@ -369,7 +369,7 @@
 #define HAVE_STRSTR 1
 
 /* Define to 1 if <sys/stat.h> declares struct statx. */
-/* #undef HAVE_STRUCT_STATX_IN_SYS_STAT_H */
+#define HAVE_STRUCT_STATX_IN_SYS_STAT_H 1
 
 /* Define to 1 if you have the 'swapcontext' function. */
 #define HAVE_SWAPCONTEXT 1
@@ -381,13 +381,13 @@
 /* #undef HAVE_SYS_ENDIAN_H */
 
 /* Define to 1 if you have the <sys/epoll.h> header file. */
-/* #undef HAVE_SYS_EPOLL_H */
+#define HAVE_SYS_EPOLL_H 1
 
 /* Define to 1 if you have the <sys/eventfd.h> header file. */
-/* #undef HAVE_SYS_EVENTFD_H */
+#define HAVE_SYS_EVENTFD_H 1
 
 /* Define to 1 if you have the <sys/klog.h> header file. */
-/* #undef HAVE_SYS_KLOG_H */
+#define HAVE_SYS_KLOG_H 1
 
 /* Define to 1 if you have the <sys/lgrp_user_impl.h> header file. */
 /* #undef HAVE_SYS_LGRP_USER_IMPL_H */
@@ -399,10 +399,10 @@
 #define HAVE_SYS_POLL_H 1
 
 /* Define to 1 if you have the <sys/prctl.h> header file. */
-/* #undef HAVE_SYS_PRCTL_H */
+#define HAVE_SYS_PRCTL_H 1
 
 /* Define to 1 if you have the <sys/signalfd.h> header file. */
-/* #undef HAVE_SYS_SIGNALFD_H */
+#define HAVE_SYS_SIGNALFD_H 1
 
 /* Define to 1 if you have the <sys/signal.h> header file. */
 #define HAVE_SYS_SIGNAL_H 1
@@ -423,19 +423,19 @@
 #define HAVE_SYS_TYPES_H 1
 
 /* Define to 1 if <sys/user.h> defines struct user_regs_struct */
-/* #undef HAVE_SYS_USER_REGS */
+#define HAVE_SYS_USER_REGS 1
 
 /* Define to 1 if you have the 'timer_delete' function. */
-/* #undef HAVE_TIMER_DELETE */
+#define HAVE_TIMER_DELETE 1
 
 /* can use __thread to define thread-local variables */
-/* #undef HAVE_TLS */
+#define HAVE_TLS 1
 
 /* Define to 1 if you have the <unistd.h> header file. */
 #define HAVE_UNISTD_H 1
 
 /* Define to 1 if you have a usable <linux/futex.h> header file. */
-/* #undef HAVE_USABLE_LINUX_FUTEX_H */
+#define HAVE_USABLE_LINUX_FUTEX_H 1
 
 /* Define to 1 if you have the 'utimensat' function. */
 #define HAVE_UTIMENSAT 1
@@ -590,7 +590,7 @@
 #define VG_TMPDIR "/tmp"
 
 /* xcode sdk include directory */
-#define XCODE_DIR "/usr/include"
+/* #undef XCODE_DIR */
 
 /* Define as 'int' if <sys/types.h> doesn't define. */
 /* #undef gid_t */

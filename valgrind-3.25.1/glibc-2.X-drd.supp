@@ -24,7 +24,7 @@
 {
    drd-libc-stdio
    drd:ConflictingAccess
-   obj:
+   obj:*/lib*/libc.so.6
 }
 {
    drd-libc-thread-cancellation-test
@@ -42,7 +42,7 @@
    drd:ConflictingAccess
    fun:__GI_mempcpy
    fun:_IO_*xsputn*
-   obj: 
+   obj:*/lib*/libc.so.6 
 }
 
 #

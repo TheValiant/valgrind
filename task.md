@@ -113,8 +113,7 @@ This is the most critical step, where you tell Valgrind's build system to use yo
     ./configure --host=x86_64-apple-darwin19 --target=x86_64-apple-darwin19 \
                 CC=x86_64-apple-darwin19-clang \
                 CXX=x86_64-apple-darwin19-clang++ \
-                LDFLAGS="-static-libgcc -static-libstdc++ -flto=full" \
-                --enable-only64bit \
+                LDFLAGS="-static-libgcc -static -static-libstdc++ -flto=full" \
                 --prefix=/usr/local 2>&1 | tee configure.log
     ```
     ***Note on the `--host` and `--target` flags:*** We're using `darwin19` which corresponds to macOS 10.15.7 (Catalina). You can verify the exact target triplet provided by your `osxcross` installation by running `x86_64-apple-darwin19-clang -v`. The configure output is logged to `configure.log` for debugging.
@@ -122,7 +121,7 @@ This is the most critical step, where you tell Valgrind's build system to use yo
     ***Important:*** If `x86_64-apple-darwin19-clang` doesn't exist, check what's available with `ls $OSXCROSS_ROOT/target/bin/*clang` and use the highest Darwin version available. osxcross typically builds multiple Darwin versions from a single SDK.
     
     ***Static Linking Notes:*** 
-    - `-static-libgcc` and `-static-libstdc++`: Link standard libraries statically 
+    - `-static-libgcc` and `-static` and `-static-libstdc++`: Link standard libraries statically 
     - No symbol stripping: Preserves all symbols for debugging
     - ⚠️ macOS doesn't support fully static binaries like Linux - system libraries (libc, libSystem) will still be dynamically linked
     - The result will be as static as possible while maintaining macOS compatibility
