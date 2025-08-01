@@ -18,7 +18,9 @@
 #
 # REQUIREMENTS:
 #   - Linux system with build tools (git, wget, tar, autotools)
-#   - MacOSX10.13.sdk.tar.xz in current directory (Apple licensing - must provide manually)
+#   - macOS SDK file in current directory (Apple licensing - must provide manually)
+#     Supported: MacOSX10.13.sdk.tar.xz, MacOSX10.15.sdk.tar.xz, MacOSX11.sdk.tar.xz
+#     Recommended: MacOSX10.15.sdk.tar.xz for best darwin19 compatibility
 #
 # USAGE:
 #   ./incremental-aggressive.sh safe      # 15-20% gains, safest
@@ -73,14 +75,22 @@ echo "🔍 Validating environment for safe rerun..."
 # Auto-download dependencies if needed (FULLY SELF-CONTAINED)
 echo "🔍 Checking for required files..."
 
-# Check for macOS SDK
-if [ ! -f "MacOSX10.13.sdk.tar.xz" ]; then
-    echo "❌ Error: MacOSX10.13.sdk.tar.xz not found"
-    echo "   This file must be provided manually due to Apple licensing"
+# Check for macOS SDK (try multiple versions, prefer newer ones)
+SDK_FILE=""
+for sdk in MacOSX10.15.sdk.tar.xz MacOSX11.sdk.tar.xz MacOSX10.14.sdk.tar.xz MacOSX10.13.sdk.tar.xz; do
+    if [ -f "$sdk" ]; then
+        SDK_FILE="$sdk"
+        echo "   ✅ Found macOS SDK: $sdk"
+        break
+    fi
+done
+
+if [ -z "$SDK_FILE" ]; then
+    echo "❌ Error: No supported macOS SDK found"
+    echo "   Supported files: MacOSX10.13.sdk.tar.xz, MacOSX10.15.sdk.tar.xz, MacOSX11.sdk.tar.xz"
+    echo "   Recommended: MacOSX10.15.sdk.tar.xz for darwin19 compatibility"
     echo "   Please obtain from a macOS machine with Xcode installed"
     exit 1
-else
-    echo "   ✅ Found macOS SDK: MacOSX10.13.sdk.tar.xz"
 fi
 
 # ALWAYS start with fresh Valgrind source (overwrite existing)
@@ -125,15 +135,19 @@ if [ ! -d "$OSXCROSS_ROOT" ]; then
     
     # Prepare SDK
     echo "   📦 Preparing macOS SDK..."
-    if [ ! -f "../MacOSX10.13.sdk.tar.xz" ]; then
-        echo "❌ Error: MacOSX10.13.sdk.tar.xz not found in parent directory"
+    if [ ! -f "../$SDK_FILE" ]; then
+        echo "❌ Error: $SDK_FILE not found in parent directory"
         exit 1
     fi
     
+    # Extract SDK name without .tar.xz extension
+    SDK_NAME=$(basename "$SDK_FILE" .tar.xz)
+    echo "   🔧 Using SDK: $SDK_NAME"
+    
     # Extract and package SDK for osxcross
-    tar -xf ../MacOSX10.13.sdk.tar.xz || exit 1
+    tar -xf "../$SDK_FILE" || exit 1
     mkdir -p tarballs || exit 1
-    tar -czf tarballs/MacOSX10.13.sdk.tar.gz -C MacOSX10.13.sdk . || exit 1
+    tar -czf "tarballs/$SDK_NAME.tar.gz" -C "$SDK_NAME" . || exit 1
     
     # Build osxcross
     echo "   🔨 Building osxcross toolchain..."
@@ -144,9 +158,9 @@ if [ ! -d "$OSXCROSS_ROOT" ]; then
 fi
 
 # Validate toolchain
-if [ ! -f "$OSXCROSS_ROOT/target/bin/x86_64-apple-darwin17-clang" ]; then
+if [ ! -f "$OSXCROSS_ROOT/target/bin/x86_64-apple-darwin19-clang" ]; then
     echo "❌ Error: Cross-compiler not found after setup"
-    echo "   Expected: $OSXCROSS_ROOT/target/bin/x86_64-apple-darwin17-clang"
+    echo "   Expected: $OSXCROSS_ROOT/target/bin/x86_64-apple-darwin19-clang"
     echo "   Available tools:"
     ls -la "$OSXCROSS_ROOT/target/bin/"*clang* 2>/dev/null || echo "   No clang tools found"
     exit 1
@@ -160,7 +174,7 @@ cat > /tmp/fake_uname/uname << 'EOF'
 if [ "$1" = "-s" ]; then
     echo "Darwin"
 elif [ "$1" = "-r" ]; then
-    echo "17.0.0"
+    echo "19.6.0"
 elif [ "$1" = "-m" ]; then
     echo "x86_64"
 else
@@ -171,73 +185,18 @@ chmod +x /tmp/fake_uname/uname
 
 echo "   ✅ Environment validation and setup completed"
 
-# Level 1: Safe Aggressive (baseline improvement)
-SAFE_CFLAGS="-O3 -flto=full -march=skylake -mtune=skylake \
-             -mavx2 -mfma -mbmi -mbmi2 \
-             -funroll-loops -finline-functions"
+# Single set of compilation flags with maximal static linking
+echo "📊 Using maximal static linking with Skylake optimizations"
 
-# Level 2: Advanced Aggressive  
-ADVANCED_CFLAGS="$SAFE_CFLAGS \
-                 -mlzcnt -madx -mfsgsbase -mrdrnd -mrdseed -mf16c \
-                 -finline-limit=1500 \
-                 -ffunction-sections -fdata-sections"
+# Core optimization flags  
+CFLAGS="-O3 -flto=full -march=skylake -mtune=skylake"
+CXXFLAGS="-O3 -flto=full -march=skylake -mtune=skylake"
 
-# Level 3: Extreme Aggressive
-EXTREME_CFLAGS="$ADVANCED_CFLAGS \
-                -fvisibility=hidden -fomit-frame-pointer \
-                -finline-limit=2000 -ffast-math \
-                -fno-rtti -fno-exceptions \
-                -fwhole-program-vtables \
-                -fvirtual-function-elimination"
-
-# Choose optimization level
-OPTIMIZATION_LEVEL=${1:-"safe"}
-case $OPTIMIZATION_LEVEL in
-    "safe")
-        CFLAGS="$SAFE_CFLAGS"
-        echo "📊 Using SAFE aggressive optimization"
-        ;;
-    "advanced") 
-        CFLAGS="$ADVANCED_CFLAGS"
-        echo "📊 Using ADVANCED aggressive optimization"
-        ;;
-    "extreme")
-        CFLAGS="$EXTREME_CFLAGS" 
-        echo "📊 Using EXTREME aggressive optimization"
-        ;;
-    *)
-        echo "❌ Usage: $0 [safe|advanced|extreme]"
-        exit 1
-        ;;
-esac
-
-CXXFLAGS="$CFLAGS"
-
-# Maximal static linking flags based on optimization level
-# NOTE: macOS can't be fully static (always needs libSystem.B.dylib), but these flags maximize static linking
-# Configure-time LDFLAGS (minimal, to pass configure tests)
-CONFIGURE_LDFLAGS="-flto=full"
-
-# Build-time LDFLAGS (full static linking)
-case $OPTIMIZATION_LEVEL in
-    "safe")
-        # Basic static linking: link standard libs statically + LTO + dead code elimination
-        BUILD_LDFLAGS="-static -static-libgcc -static-libstdc++ -flto=full -Wl,-dead_strip"
-        ;;
-    "advanced") 
-        # + Symbol stripping for smaller binary
-        BUILD_LDFLAGS="-static -static-libgcc -static-libstdc++ -flto=full -Wl,-dead_strip -Wl,-x"
-        ;;
-    "extreme")
-        # + Aggressive symbol/debug stripping + dylib cleanup + unwind table removal  
-        BUILD_LDFLAGS="-static -static-libgcc -static-libstdc++ -flto=full -Wl,-dead_strip -Wl,-x -Wl,-dead_strip_dylibs -Wl,-no_compact_unwind"
-        ;;
-esac
-
-# Use minimal flags for configure
-LDFLAGS="$CONFIGURE_LDFLAGS"
+# Maximal static linking flags for macOS
+LDFLAGS="-static -static-libgcc -static-libstdc++ -Wl,-Bstatic -flto=full"
 
 echo "CFLAGS: $CFLAGS"
+echo "CXXFLAGS: $CXXFLAGS"
 echo "LDFLAGS: $LDFLAGS"
 
 cd valgrind-3.25.1 || exit 1
@@ -267,7 +226,7 @@ fi
 echo "   🔧 Ensuring MIG interface files are generated..."
 
 # Check if bootstrap_cmds (cross-platform MIG) exists
-BOOTSTRAP_DIR="$(dirname $(pwd))/bootstrap_cmds"
+BOOTSTRAP_DIR="$(dirname "$(pwd)")/bootstrap_cmds"
 if [ ! -d "$BOOTSTRAP_DIR" ]; then
     echo "   📥 Installing cross-platform MIG tool..."
     cd .. || exit 1
@@ -293,7 +252,9 @@ echo "   🔄 Generating MIG interface files..."
 cd coregrind/m_mach || exit 1
 
 MIG_TOOL="$BOOTSTRAP_DIR/migcom.tproj/mig.sh"
-SDK_PATH="$OSXCROSS_ROOT/MacOSX10.13.sdk"
+# Extract SDK name from the file we found earlier
+SDK_NAME=$(basename "$SDK_FILE" .tar.xz)
+SDK_PATH="$OSXCROSS_ROOT/$SDK_NAME"
 
 if [ ! -f "$MIG_TOOL" ]; then
     echo "      ❌ MIG tool not found at: $MIG_TOOL"
@@ -309,9 +270,9 @@ if [ ! -d "$SDK_PATH" ]; then
 fi
 
 # Set up environment for cross-compilation MIG
-export MIGCC="x86_64-apple-darwin17-clang"
-export CC="x86_64-apple-darwin17-clang"
-export CPP="x86_64-apple-darwin17-clang -E"
+export MIGCC="x86_64-apple-darwin19-clang"
+export CC="x86_64-apple-darwin19-clang"
+export CPP="x86_64-apple-darwin19-clang -E"
 
 # Generate all required MIG files
 echo "      📝 Generating mach_vm interface..."
@@ -352,8 +313,11 @@ cd ../.. || exit 1
 # 4. State verification complete
 echo "   ✅ Clean state verified - safe to proceed"
 
-# Configure with selected optimization level
-echo "⚙️ Configuring with $OPTIMIZATION_LEVEL optimization..."
+# Configure with comprehensive error detection
+echo "⚙️ Configuring with maximal static linking..."
+echo "📋 Verbose configure output will be captured in configure-maximal.log"
+
+set -o pipefail  # Ensure pipe failures are caught
 env -i \
     PATH="/tmp/fake_uname:$OSXCROSS_ROOT/target/bin:/usr/bin:/bin" \
     HOME="$HOME" SHELL=/bin/bash OSXCROSS_ROOT="$OSXCROSS_ROOT" \
@@ -361,14 +325,41 @@ env -i \
     CXXFLAGS="$CXXFLAGS" \
     LDFLAGS="$LDFLAGS" \
     ./configure \
-        --host=x86_64-apple-darwin17 \
-        --target=x86_64-apple-darwin17 \
-        CC=x86_64-apple-darwin17-clang \
-        CXX=x86_64-apple-darwin17-clang++ \
+        --host=x86_64-apple-darwin19 \
+        --target=x86_64-apple-darwin19 \
+        CC=x86_64-apple-darwin19-clang \
+        CXX=x86_64-apple-darwin19-clang++ \
         --enable-only64bit \
         --prefix=/usr/local \
         --disable-dependency-tracking \
-        2>&1 | tee "configure-$OPTIMIZATION_LEVEL.log"
+        2>&1 | tee "configure-maximal.log"
+CONFIGURE_EXIT_CODE=${PIPESTATUS[0]}
+
+echo ""
+echo "🔍 Validating configure results..."
+
+if [ $CONFIGURE_EXIT_CODE -ne 0 ]; then
+    echo "❌ Configure failed with exit code: $CONFIGURE_EXIT_CODE"
+    echo ""
+    echo "📋 Last 20 lines of configure log:"
+    tail -20 "configure-maximal.log"
+    echo ""
+    echo "💡 Common configure issues:"
+    echo "1. Check config.log for detailed error information"
+    echo "2. Verify cross-compiler is working: x86_64-apple-darwin19-clang --version"
+    echo "3. Check SDK paths are correct"
+    exit 1
+else
+    echo "✅ Configure completed successfully (exit code: 0)"
+fi
+
+# Check if essential files were created
+if [ ! -f "coregrind/Makefile" ]; then
+    echo "❌ Configure succeeded but Makefile was not created"
+    exit 1
+else
+    echo "✅ Makefile created successfully"
+fi
 
 # Create atomic backups AFTER configure (CRITICAL for idempotency)
 echo "📋 Creating atomic backups for idempotent reruns..."
@@ -412,10 +403,10 @@ fi
 echo "   🔍 Checking SDK paths in Makefile..."
 if grep -q "/usr/include/mach/" coregrind/Makefile; then
     echo "   📝 Found /usr/include/mach/ paths, replacing with SDK path..."
-    sed -i "s|/usr/include/mach/|$OSXCROSS_ROOT/MacOSX10.13.sdk/usr/include/mach/|g" coregrind/Makefile
+    sed -i "s|/usr/include/mach/|$SDK_PATH/usr/include/mach/|g" coregrind/Makefile
     echo "   ✅ Makefile SDK paths fixed"
     # Verify the fix
-    echo "   🔍 Verification: $(grep -c "$OSXCROSS_ROOT/MacOSX10.13.sdk/usr/include/mach/" coregrind/Makefile) SDK paths found"
+    echo "   🔍 Verification: $(grep -c "$SDK_PATH/usr/include/mach/" coregrind/Makefile) SDK paths found"
 else
     echo "   ⚠️ No /usr/include/mach/ paths found (already fixed or different configure)"
 fi
@@ -423,12 +414,12 @@ fi
 # Fix linker path (idempotent)
 echo "   🔧 Checking linker configuration..."
 if [ -f coregrind/link_tool_exe_darwin ]; then
-    if ! grep -q "x86_64-apple-darwin17-ld" coregrind/link_tool_exe_darwin; then
-        echo "   📝 Updating linker from /usr/bin/ld to darwin17-ld..."
-        sed -i 's|my $cmd = "/usr/bin/ld";|my $cmd = "x86_64-apple-darwin17-ld";|' coregrind/link_tool_exe_darwin
+    if ! grep -q "x86_64-apple-darwin19-ld" coregrind/link_tool_exe_darwin; then
+        echo "   📝 Updating linker from /usr/bin/ld to darwin19-ld..."
+        sed -i 's|my $cmd = "/usr/bin/ld";|my $cmd = "x86_64-apple-darwin19-ld";|' coregrind/link_tool_exe_darwin
         echo "   ✅ Linker path fixed"
     else
-        echo "   ✅ Linker already configured for darwin17-ld (rerun-safe)"
+        echo "   ✅ Linker already configured for darwin19-ld (rerun-safe)"
     fi
 else
     echo "   ⚠️ Linker script not found"
@@ -444,38 +435,112 @@ fi
 
 # Summary of applied optimizations
 echo ""
-echo "📊 OPTIMIZATION SUMMARY ($OPTIMIZATION_LEVEL level)"
+echo "📊 MAXIMAL STATIC LINKING SUMMARY"
 echo "=================================================="
-case $OPTIMIZATION_LEVEL in
-    "safe")
-        echo "🎯 Target: 15-20% performance gain, 10-15% size reduction"
-        echo "✅ LTO + Basic static linking + Skylake optimizations"
-        ;;
-    "advanced")
-        echo "🎯 Target: 25-35% performance gain, 20-25% size reduction"  
-        echo "✅ + Advanced CPU features + Symbol stripping"
-        ;;
-    "extreme")
-        echo "🎯 Target: 35-50% performance gain, 30-40% size reduction"
-        echo "✅ + Aggressive inlining + Ultra static linking + C++ optimizations"
-        ;;
-esac
-echo "📋 Current binary: 36KB with 55 symbols"
+echo "🎯 Target: Maximum static linking with Skylake optimizations"
+echo "✅ LTO + Maximal static linking + Skylake CPU optimizations"
+echo "✅ Full symbol preservation (no stripping)"
+echo "📋 Building for macOS 10.15.7 (darwin19) compatibility"
 echo ""
 
-# Build with selected optimization using full static linking flags
-echo "🔥 Building with $OPTIMIZATION_LEVEL optimization..."
-echo "🔗 Using build-time LDFLAGS: $BUILD_LDFLAGS"
+# Build with selected optimization and comprehensive error detection
+echo "🔥 Building with maximal static linking..."
+echo "🔗 Using build-time LDFLAGS: $LDFLAGS"
+echo "📋 Full verbose output will be captured in make-maximal.log"
+
+# Run make with proper error detection
+set -o pipefail  # Ensure pipe failures are caught
 env -i \
     PATH="/tmp/fake_uname:$OSXCROSS_ROOT/target/bin:/usr/bin:/bin" \
     HOME="$HOME" SHELL=/bin/bash OSXCROSS_ROOT="$OSXCROSS_ROOT" \
-    LDFLAGS="$BUILD_LDFLAGS" \
-    make -j"$(nproc)" 2>&1 | tee "make-$OPTIMIZATION_LEVEL.log"
+    LDFLAGS="$LDFLAGS" \
+    make -j"$(nproc)" V=1 2>&1 | tee "make-maximal.log"
+BUILD_EXIT_CODE=${PIPESTATUS[0]}
 
-# Analyze results
+echo ""
+echo "🔍 Comprehensive build validation..."
+
+# Check make exit code first
+if [ $BUILD_EXIT_CODE -ne 0 ]; then
+    echo "❌ Make failed with exit code: $BUILD_EXIT_CODE"
+    BUILD_FAILED=1
+else
+    echo "✅ Make completed with exit code: 0"
+    BUILD_FAILED=0
+fi
+
+# Check for critical errors in build log
+echo "🔍 Scanning build log for critical errors..."
+CRITICAL_ERRORS=$(grep -c -E "(Assertion.*failed|Error:|error:|failed|cannot create executables)" "make-maximal.log" 2>/dev/null || echo "0")
+if [ "$CRITICAL_ERRORS" -gt 0 ]; then
+    echo "❌ Found $CRITICAL_ERRORS critical error(s) in build log"
+    BUILD_FAILED=1
+else
+    echo "✅ No critical errors found in build log"
+fi
+
+# Check for essential binaries
+echo "🔍 Verifying essential binaries were built..."
+REQUIRED_BINARIES=(
+    "coregrind/valgrind"
+    "memcheck/memcheck-amd64-darwin"
+    "coregrind/vgpreload_core-amd64-darwin.so"
+    "memcheck/vgpreload_memcheck-amd64-darwin.so"
+)
+
+MISSING_BINARIES=()
+for binary in "${REQUIRED_BINARIES[@]}"; do
+    if [ -f "$binary" ]; then
+        echo "✅ Found: $binary"
+    else
+        echo "❌ Missing: $binary"
+        MISSING_BINARIES+=("$binary")
+        BUILD_FAILED=1
+    fi
+done
+
+# Final build validation
+if [ $BUILD_FAILED -eq 1 ]; then
+    echo ""
+    echo "❌ BUILD FAILED - Comprehensive validation detected issues"
+    echo ""
+    echo "🔍 FAILURE ANALYSIS:"
+    echo "=================="
+    echo "📋 Make exit code: $BUILD_EXIT_CODE"
+    echo "📋 Critical errors in log: $CRITICAL_ERRORS"
+    echo "📋 Missing binaries: ${#MISSING_BINARIES[@]}"
+    
+    if [ ${#MISSING_BINARIES[@]} -gt 0 ]; then
+        echo ""
+        echo "📋 Missing essential binaries:"
+        for missing in "${MISSING_BINARIES[@]}"; do
+            echo "   - $missing"
+        done
+    fi
+    
+    echo ""
+    echo "📋 Last 20 lines of build log:"
+    tail -20 "make-maximal.log"
+    
+    echo ""
+    echo "💡 DEBUGGING SUGGESTIONS:"
+    echo "========================"
+    echo "1. Check full build log: cat make-maximal.log"
+    echo "2. Look for linker assertions: grep -i assertion make-maximal.log"
+    echo "3. Check configure log: cat configure-maximal.log"
+    echo "4. Try different optimization level:"
+    echo "   ./incremental-aggressive.sh safe"
+    
+    exit 1
+fi
+
+echo ""
+echo "✅ BUILD SUCCESS - All validation checks passed!"
+
+# Analyze successful build results
 if [ -f coregrind/valgrind ]; then
     echo ""
-    echo "✅ $OPTIMIZATION_LEVEL optimization build SUCCESS!"
+    echo "✅ Maximal static linking build SUCCESS!"
     echo ""
     echo "📊 Optimization Results:"
     echo "========================"
@@ -491,10 +556,10 @@ if [ -f coregrind/valgrind ]; then
     
     echo ""
     echo "Dependencies:"
-    x86_64-apple-darwin17-otool -L coregrind/valgrind
+    x86_64-apple-darwin19-otool -L coregrind/valgrind
     
     echo ""
-    echo "Symbol count: $(x86_64-apple-darwin17-nm coregrind/valgrind | wc -l)"
+    echo "Symbol count: $(x86_64-apple-darwin19-nm coregrind/valgrind | wc -l)"
     
     echo ""
     echo "File info:"
@@ -510,12 +575,10 @@ if [ -f coregrind/valgrind ]; then
     [ -f coregrind/Makefile.original ] && echo "   - coregrind/Makefile.original" || echo "   - ❌ Makefile backup missing"
     [ -f coregrind/link_tool_exe_darwin.original ] && echo "   - coregrind/link_tool_exe_darwin.original" || echo "   - ❌ Linker backup missing"
     echo "✅ MIG files preserved for future builds"
-    echo "✅ Optimization level: $OPTIMIZATION_LEVEL"
+    echo "✅ Build type: Maximal static linking"
     echo ""
-    echo "💡 To try different optimization levels:"
-    echo "   ./incremental-aggressive.sh safe"
-    echo "   ./incremental-aggressive.sh advanced" 
-    echo "   ./incremental-aggressive.sh extreme"
+    echo "💡 Script completed successfully."
+    echo "   Rerun: ./incremental-aggressive.sh"
     
     # AUTO-PACKAGE THE RESULT (COMPLETE END-TO-END)
     echo ""
@@ -523,7 +586,7 @@ if [ -f coregrind/valgrind ]; then
     cd .. || exit 1
     
     # Create portable directory
-    PACKAGE_NAME="valgrind-3.25.1-macos-x86_64-$OPTIMIZATION_LEVEL-optimized"
+    PACKAGE_NAME="valgrind-3.25.1-macos-x86_64-maximal-static"
     mkdir -p "$PACKAGE_NAME" || exit 1
     
     # Copy main binary and shared libraries
@@ -539,7 +602,7 @@ Valgrind 3.25.1 Cross-Compiled for macOS x86_64
 ================================================
 
 Build Date: $(date)
-Optimization Level: $OPTIMIZATION_LEVEL
+Build Type: Maximal static linking
 Target Platform: macOS x86_64 (darwin17)
 Host Platform: $(uname -a)
 
@@ -551,9 +614,9 @@ Binary Information:
 $(file "$PACKAGE_NAME/valgrind")
 
 Dependencies:
-$(x86_64-apple-darwin17-otool -L "$PACKAGE_NAME/valgrind")
+$(x86_64-apple-darwin19-otool -L "$PACKAGE_NAME/valgrind")
 
-Symbol Count: $(x86_64-apple-darwin17-nm "$PACKAGE_NAME/valgrind" | wc -l)
+Symbol Count: $(x86_64-apple-darwin19-nm "$PACKAGE_NAME/valgrind" | wc -l)
 
 Usage on macOS:
 1. Extract this package
@@ -576,7 +639,7 @@ EOF
     echo "🎉 CROSS-COMPILATION COMPLETE - FULLY SELF-CONTAINED SUCCESS!"
     echo "=============================================================="
     echo "✅ Total process: osxcross + MIG + Valgrind + optimization + packaging"
-    echo "✅ Optimization level: $OPTIMIZATION_LEVEL"
+    echo "✅ Build type: Maximal static linking"
     echo "✅ Final binary: $(stat -c%s "$PACKAGE_NAME/valgrind") bytes"
     echo "✅ Dependencies: Only libSystem.B.dylib (optimal for macOS)"
     echo "✅ Target: macOS x86_64 (darwin17)"
@@ -589,13 +652,13 @@ EOF
     cd valgrind-3.25.1 || exit 1
     
 else
-    echo "❌ $OPTIMIZATION_LEVEL optimization build FAILED"
+    echo "❌ Maximal static linking build FAILED"
     echo ""
     echo "🔍 DEBUGGING INFORMATION:"
     echo "========================"
     echo "📋 Logs to check:"
-    echo "   - configure-$OPTIMIZATION_LEVEL.log"
-    echo "   - make-$OPTIMIZATION_LEVEL.log"
+    echo "   - configure-maximal.log"
+    echo "   - make-maximal.log"
     echo ""
     echo "🔧 Common issues:"
     echo "   - Check if MIG files were generated properly"
@@ -614,7 +677,7 @@ else
     echo "✅ All backups preserved - safe to retry"
     echo "✅ No permanent damage to source tree"
     echo "✅ Simply run the script again:"
-    echo "   ./incremental-aggressive.sh $OPTIMIZATION_LEVEL"
+    echo "   ./incremental-aggressive.sh"
     echo ""
     echo "🛠️ Manual recovery options:"
     echo "   1. Try a lower optimization level first:"

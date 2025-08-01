@@ -108,15 +108,12 @@ This is the most critical step, where you tell Valgrind's build system to use yo
 *   **Run the configure script with cross-compilation and static flags:**
     ```bash
     # Set the host and target for cross-compilation to match macOS 10.15.7 (Darwin 19)
-    # Drop PGO and add Skylake-specific optimizations for target CPU
+    # Maximal static linking with Skylake optimizations, no symbol stripping
     CFLAGS="-O3 -flto=full -march=skylake -mtune=skylake" CXXFLAGS="-O3 -flto=full -march=skylake -mtune=skylake" \
     ./configure --host=x86_64-apple-darwin19 --target=x86_64-apple-darwin19 \
                 CC=x86_64-apple-darwin19-clang \
                 CXX=x86_64-apple-darwin19-clang++ \
-
-
-
-                LDFLAGS="-static -static-libgcc -static-libstdc++ -flto=full -Wl,-dead_strip" \
+                LDFLAGS="-static-libgcc -static-libstdc++ -flto=full" \
                 --enable-only64bit \
                 --prefix=/usr/local 2>&1 | tee configure.log
     ```
@@ -126,7 +123,7 @@ This is the most critical step, where you tell Valgrind's build system to use yo
     
     ***Static Linking Notes:*** 
     - `-static-libgcc` and `-static-libstdc++`: Link standard libraries statically 
-    - `-Wl,-dead_strip`: Remove unused code sections (reduces binary size)
+    - No symbol stripping: Preserves all symbols for debugging
     - ⚠️ macOS doesn't support fully static binaries like Linux - system libraries (libc, libSystem) will still be dynamically linked
     - The result will be as static as possible while maintaining macOS compatibility
 
@@ -210,9 +207,10 @@ You can now transfer `valgrind-3.25.1-macos-x86_64-static.tar.gz` to an Intel-ba
 **Solutions Applied**:
 1. **Correct Darwin Version**: Now targeting `darwin19` (macOS 10.15.7) instead of `darwin17` (macOS 10.13)
 2. **CPU-Specific Optimizations**: Added `-march=skylake -mtune=skylake` for your Intel Core i5-10500
-3. **Removed PGO**: Eliminated profile-guided optimization complexity
-4. **Enhanced Static Linking**: Added `-static-libstdc++` and `-Wl,-dead_strip` for maximum static linking
+3. **Simplified Build**: Single set of compilation flags, no complex optimization levels
+4. **Maximal Static Linking**: Added `-static-libstdc++` without symbol stripping for maximum static linking
 5. **MIG Integration**: Added critical MIG interface file generation step
-6. **Enhanced Verification**: Added platform compatibility checks
+6. **SDK Flexibility**: Support for multiple SDK versions with preference for newer ones
+7. **Enhanced Verification**: Added platform compatibility checks
 
 **Expected Result**: Valgrind should now recognize the correct platform and execute properly on your macOS 10.15.7 system.

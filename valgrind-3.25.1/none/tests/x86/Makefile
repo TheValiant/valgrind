@@ -126,7 +126,7 @@ am__append_10 = -Wno-format-extra-args \
 	-Wno-uninitialized -Wno-unused-value # \
 	clang 3.0.0
 am__append_11 = -Wno-unused-private-field    # drd/tests/tsan_unittest.cpp
-#am__append_12 = insn_ssse3
+am__append_12 = insn_ssse3
 # Sun Studio assembler fails to build some tests (illegal mnemonic).
 am__append_13 = insn_sse3
 
@@ -146,7 +146,7 @@ check_PROGRAMS = aad_aam$(EXEEXT) allexec$(EXEEXT) badseg$(EXEEXT) \
 	x87trigOOR$(EXEEXT) yield$(EXEEXT) xadd$(EXEEXT) \
 	$(am__EXEEXT_5) $(am__EXEEXT_6) $(am__EXEEXT_7) \
 	$(am__EXEEXT_8) $(am__EXEEXT_9) $(am__EXEEXT_10)
-#am__append_15 = ssse3_misaligned
+am__append_15 = ssse3_misaligned
 am__append_16 = sse4-x86
 am__append_17 = lzcnt32
 am__append_18 = movbe
@@ -174,14 +174,14 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
-#am__EXEEXT_1 = insn_ssse3$(EXEEXT)
+am__EXEEXT_1 = insn_ssse3$(EXEEXT)
 am__EXEEXT_2 = insn_sse3$(EXEEXT)
 am__EXEEXT_3 = insn_fpu$(EXEEXT)
 am__EXEEXT_4 = insn_basic$(EXEEXT) insn_cmov$(EXEEXT) \
 	insn_mmx$(EXEEXT) insn_mmxext$(EXEEXT) insn_sse$(EXEEXT) \
 	insn_sse2$(EXEEXT) $(am__EXEEXT_1) $(am__EXEEXT_2) \
 	$(am__EXEEXT_3)
-#am__EXEEXT_5 = ssse3_misaligned$(EXEEXT)
+am__EXEEXT_5 = ssse3_misaligned$(EXEEXT)
 am__EXEEXT_6 = sse4-x86$(EXEEXT)
 am__EXEEXT_7 = lzcnt32$(EXEEXT)
 am__EXEEXT_8 = movbe$(EXEEXT)
@@ -471,9 +471,9 @@ BOOST_LIBS =
 CC = x86_64-apple-darwin17-clang
 CCAS = x86_64-apple-darwin17-clang
 CCASDEPMODE = depmode=none
-CCASFLAGS = -O3 -flto=full -march=skylake -mtune=skylake              -mavx2 -mfma -mbmi -mbmi2              -funroll-loops -finline-functions                  -mlzcnt -madx -mfsgsbase -mrdrnd -mrdseed -mf16c                  -finline-limit=1500                  -ffunction-sections -fdata-sections                 -fvisibility=hidden -fomit-frame-pointer                 -finline-limit=2000 -ffast-math                 -fno-rtti -fno-exceptions                 -fwhole-program-vtables                 -fvirtual-function-elimination
+CCASFLAGS = -O3 -flto=full -march=skylake -mtune=skylake
 CCDEPMODE = depmode=none
-CFLAGS = -O3 -flto=full -march=skylake -mtune=skylake              -mavx2 -mfma -mbmi -mbmi2              -funroll-loops -finline-functions                  -mlzcnt -madx -mfsgsbase -mrdrnd -mrdseed -mf16c                  -finline-limit=1500                  -ffunction-sections -fdata-sections                 -fvisibility=hidden -fomit-frame-pointer                 -finline-limit=2000 -ffast-math                 -fno-rtti -fno-exceptions                 -fwhole-program-vtables                 -fvirtual-function-elimination
+CFLAGS = -O3 -flto=full -march=skylake -mtune=skylake
 CFLAGS_MPI = -g -O -fno-omit-frame-pointer -Wall -dynamic
 CPP = x86_64-apple-darwin17-clang -E
 CPPFLAGS = 
@@ -481,7 +481,7 @@ CSCOPE = cscope
 CTAGS = ctags
 CXX = x86_64-apple-darwin17-clang++
 CXXDEPMODE = depmode=none
-CXXFLAGS = -O3 -flto=full -march=skylake -mtune=skylake              -mavx2 -mfma -mbmi -mbmi2              -funroll-loops -finline-functions                  -mlzcnt -madx -mfsgsbase -mrdrnd -mrdseed -mf16c                  -finline-limit=1500                  -ffunction-sections -fdata-sections                 -fvisibility=hidden -fomit-frame-pointer                 -finline-limit=2000 -ffast-math                 -fno-rtti -fno-exceptions                 -fwhole-program-vtables                 -fvirtual-function-elimination
+CXXFLAGS = -O3 -flto=full -march=skylake -mtune=skylake
 CYGPATH_W = echo
 DEFAULT_SUPP = ./xfree-3.supp ./xfree-4.supp ./darwin10-drd.supp ./darwin17.supp 
 DEFS = -DHAVE_CONFIG_H
@@ -577,7 +577,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LDFLAGS = -flto=full
+LDFLAGS = 
 LDFLAGS_MPI = -dynamic -dynamiclib -all_load
 LIBOBJS =  ${LIBOBJDIR}memcmp$U.o
 LIBS = 

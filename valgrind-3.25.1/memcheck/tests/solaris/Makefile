@@ -513,9 +513,9 @@ BOOST_LIBS =
 CC = x86_64-apple-darwin17-clang
 CCAS = x86_64-apple-darwin17-clang
 CCASDEPMODE = depmode=none
-CCASFLAGS = -O3 -flto=full -march=skylake -mtune=skylake              -mavx2 -mfma -mbmi -mbmi2              -funroll-loops -finline-functions                  -mlzcnt -madx -mfsgsbase -mrdrnd -mrdseed -mf16c                  -finline-limit=1500                  -ffunction-sections -fdata-sections                 -fvisibility=hidden -fomit-frame-pointer                 -finline-limit=2000 -ffast-math                 -fno-rtti -fno-exceptions                 -fwhole-program-vtables                 -fvirtual-function-elimination
+CCASFLAGS = -O3 -flto=full -march=skylake -mtune=skylake
 CCDEPMODE = depmode=none
-CFLAGS = -O3 -flto=full -march=skylake -mtune=skylake              -mavx2 -mfma -mbmi -mbmi2              -funroll-loops -finline-functions                  -mlzcnt -madx -mfsgsbase -mrdrnd -mrdseed -mf16c                  -finline-limit=1500                  -ffunction-sections -fdata-sections                 -fvisibility=hidden -fomit-frame-pointer                 -finline-limit=2000 -ffast-math                 -fno-rtti -fno-exceptions                 -fwhole-program-vtables                 -fvirtual-function-elimination
+CFLAGS = -O3 -flto=full -march=skylake -mtune=skylake
 CFLAGS_MPI = -g -O -fno-omit-frame-pointer -Wall -dynamic
 CPP = x86_64-apple-darwin17-clang -E
 CPPFLAGS = 
@@ -523,7 +523,7 @@ CSCOPE = cscope
 CTAGS = ctags
 CXX = x86_64-apple-darwin17-clang++
 CXXDEPMODE = depmode=none
-CXXFLAGS = -O3 -flto=full -march=skylake -mtune=skylake              -mavx2 -mfma -mbmi -mbmi2              -funroll-loops -finline-functions                  -mlzcnt -madx -mfsgsbase -mrdrnd -mrdseed -mf16c                  -finline-limit=1500                  -ffunction-sections -fdata-sections                 -fvisibility=hidden -fomit-frame-pointer                 -finline-limit=2000 -ffast-math                 -fno-rtti -fno-exceptions                 -fwhole-program-vtables                 -fvirtual-function-elimination
+CXXFLAGS = -O3 -flto=full -march=skylake -mtune=skylake
 CYGPATH_W = echo
 DEFAULT_SUPP = ./xfree-3.supp ./xfree-4.supp ./darwin10-drd.supp ./darwin17.supp 
 DEFS = -DHAVE_CONFIG_H
@@ -619,7 +619,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LDFLAGS = -flto=full
+LDFLAGS = 
 LDFLAGS_MPI = -dynamic -dynamiclib -all_load
 LIBOBJS =  ${LIBOBJDIR}memcmp$U.o
 LIBS = 
